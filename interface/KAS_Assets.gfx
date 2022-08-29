@@ -1,0 +1,18 @@
+spriteTypes = {	
+	
+	spriteType = {
+		name = "KAS_Dummy_Mission_Icon"
+		texturefile = "gfx/interface/missions/KAS_missions_gfx/kobold_sit.dds"
+	}
+
+	spriteType = {
+		name = "KAS_Dummy_Kobildzan_Mission_Icon"
+		texturefile = "gfx/interface/missions/KAS_missions_gfx/kobold_spear.dds"
+	}
+
+	spriteType = {
+		name = "GFX_great_project_kobold_hoard"	
+		texturefile = "gfx//interface//great_projects//great_project_kobold_hoard.dds"
+	}
+	
+}

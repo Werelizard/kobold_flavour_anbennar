@@ -1,0 +1,40 @@
+############
+#MONARCHIES#
+############
+
+#Kobildzan
+KAS_Kobildzan_reform = {
+	icon = "castle"
+	allow_normal_conversion = no
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = no
+	nation_designer_cost = 0
+	modifiers = {
+		unjustified_demands = -0.1
+		defensiveness = 0.25
+		max_absolutism = 10
+		artificers_influence_modifier = 0.1
+		burghers_influence_modifier = 0.1
+	}
+
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	has_term_election = no
+	
+	custom_attributes = {
+		disables_nobility = yes
+		locked_government_type = yes
+		has_kobildzan_factions = yes
+		election_on_death = yes
+	}
+
+	factions = {
+		faction_redscales
+		faction_greenscales
+		faction_bluescales
+	}
+
+	ai = {
+		factor = 1
+	}
+}

@@ -1,0 +1,16 @@
+KAS_Pass_Dens = {
+	local_hostile_attrition = 1
+	max_attrition = 1
+	local_hostile_movement_speed = -0.2
+}
+
+KAS_Proper_Income_Reward = {
+	local_development_cost = -0.05
+	local_gold_depletion_chance_modifier = -1
+}
+
+KAS_Alenic_Capital = {
+	statewide_governing_cost = -0.50
+	local_unrest = -2
+	local_build_cost = -0.25
+}

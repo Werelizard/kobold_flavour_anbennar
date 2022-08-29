@@ -1,0 +1,16 @@
+﻿l_english:
+ KAS_Kobildzan_reform:0 "Kobildzan Viraxia"
+ KAS_Kobildzan_reform_desc:0 "A government form where the ruler is elected from amongst the different traditional clans of the Dragon Coast Kobolds. Very much a glorified confederacy, this type of government favours a rotation in leadership between the tree major factions."
+ mechanic_has_kobildzan_factions_yes:0 "§gThe Kobildzan Throne is subject to factionalism, with a new heir being appointed from amongst the three clans: the Greenscales, the Bluescales and the Redscales.§!"
+ GOV_HAS_KOBILDZAN_FACTIONS:0 "§gThe Kobildzan Throne is subject to factionalism, with a new heir being appointed from amongst the three clans: the Greenscales, the Bluescales and the Redscales.§!"
+ HAS_KOBILDZAN_FACTIONS:0 "§gThe Kobildzan Throne is subject to factionalism, with a new heir being appointed from amongst the three clans: the Greenscales, the Bluescales and the Redscales.§!"
+
+ faction_redscales:0 "Redscales"
+ faction_greenscales:0 "Greenscales"
+ faction_bluescales:0 "Bluescales"
+ faction_redscales_influence:0 "Redscale Influence"
+ faction_greenscales_influence:0 "Greenscale Influence"
+ faction_bluescales_influence:0 "Bluescale Influence"
+
+ VIRAXIA:0 "Viraxia"
+ VIRAX:0 "Virax"

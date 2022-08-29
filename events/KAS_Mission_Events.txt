@@ -1,0 +1,726 @@
+namespace = kas.mission_event
+
+#Unification event
+country_event = {
+	id = kas_mission_event.1
+	title = kas.mission_event.1.title
+	desc = kas.mission_event.1.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = kas.mission_event.1.a
+        ai_chance = {
+			factor = 1
+		}
+		change_tag = Z38
+		swap_free_idea_group = yes
+		change_government = republic
+		add_government_reform = KAS_Kobildzan_reform
+		if = {
+			limit = {
+				NOT = {
+					government_rank = 2
+				}
+			}
+			set_government_rank = 2
+		}
+		custom_tooltip = kas_mission_event.1.permanentclaims.tooltip
+		hidden_effect = {
+			every_province = {
+				limit = {
+					culture_group = kobold
+					superregion = western_cannor_superregion
+				}
+				add_permanent_claim = ROOT
+			}
+			gnomish_pass_area = {
+				add_permanent_claim = ROOT
+			}
+			westmoor_proper_area = {
+				add_permanent_claim = ROOT
+			}
+			moorhills_area = {
+				add_permanent_claim = ROOT
+			}
+			beronmoor_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+		hidden_effect = {
+			set_country_flag = KAS_has_kob_factions
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#To Bend the Knee - Subjugation Proposal
+country_event = {
+	id = kas_mission_event.2
+	title = kas.mission_event.2.title
+	desc = kas.mission_event.2.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Accept to bend the knee
+	option = {
+		name = kas.mission_event.2.a
+		FROM = {
+			country_event = {
+				id = kas_mission_event.3
+				days = 2
+			}
+		}
+
+        ai_chance = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				NOT = {
+					total_base_tax = FROM
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = FROM
+					value = 50
+				}
+			}
+			modifier = {
+				factor = 1.5
+				has_opinion = {
+					who = FROM
+					value = 100
+				}
+			}
+			modifier = {
+				factor = 1.5
+				ai_attitude = {
+					who = FROM
+					attitude = attitude_threatened
+				}
+			}
+			modifier = {
+				factor = 2
+				historical_friend_with = FROM
+			}
+			modifier = {
+				factor = 4
+				trust = {
+					who = FROM
+					value = 60 
+				} 
+			}
+			#Always refuse if rivals
+			modifier = {
+				factor = 0
+				historical_rival_with = FROM
+			}
+		}
+	}
+
+	#Refuse
+	option = {
+		name = kas.mission_event.2.b
+        ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 2
+				total_base_tax = FROM
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 50
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				NOT = {
+					has_opinion = {
+						who = FROM
+						value = 100
+					}
+				}
+			}
+		}
+	}
+}
+
+#To Bend the Knee - Subjugation Acceptance
+country_event = {
+	id = kas_mission_event.3
+	title = kas.mission_event.3.title
+	desc = kas.mission_event.3.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = kas.mission_event.3.a
+        ai_chance = {
+			factor = 1
+		}
+		vassalize = FROM
+	}
+}
+
+#To Bend the Knee - Subjugation Refusal
+country_event = {
+	id = kas_mission_event.4
+	title = kas.mission_event.4.title
+	desc = kas.mission_event.4.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Subjugate them!
+	option = {
+		name = kas.mission_event.4.a
+        ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			NOT = {
+				alliance_with = FROM
+			}
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_vassalize_mission
+		}
+	}
+
+	#Maybe later
+	option = {
+		name = kas.mission_event.4.b
+        ai_chance = {
+			factor = 1
+		}
+		add_legitimacy = -50
+		add_stability = -1
+		add_casus_belli = {
+			target = FROM
+			type = cb_vassalize_mission
+		}
+	}
+
+	#No thank you	
+	option = {
+		name = kas.mission_event.4.c
+        ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit ={
+				NOT = {
+					alliance_with = FROM
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_in_capital_area = yes
+					culture_group = ROOT
+				}
+				spawn_rebels = {
+					size = 1
+					type = noble_rebels
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_in_capital_area = yes
+					culture_group = ROOT
+				}
+				spawn_rebels = {
+					size = 1
+					type = noble_rebels
+				}
+			}
+		}
+	}
+}
+
+#Sack of nimscodd
+country_event = {
+	id = kas_mission_event.5
+	title = kas.mission_event.5.title
+	desc = kas.mission_event.5.desc
+	picture = IMPALED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	#Burn it all
+	option = {
+		name = kas.mission_event.5.a
+        ai_chance = {
+			factor = 1
+		}
+		169 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 50
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = yes
+			}
+			add_base_tax = 1
+			add_base_manpower = 1
+			add_base_production = 1
+		}
+		add_years_of_income = 2
+		large_decrease_of_gnomish_tolerance_effect = yes
+	}
+
+	#Spare the gnomes
+	option = {
+		name = kas.mission_event.5.b
+        ai_chance = {
+			factor = 1
+		}
+		add_stability_or_adm_power = yes
+		small_increase_of_gnomish_tolerance_effect = yes
+	}
+}
+
+#Sack of Portnamm
+country_event = {
+	id = kas_mission_event.6
+	title = kas.mission_event.6.title
+	desc = kas.mission_event.6.desc
+	picture = IMPALED_SOLDIERS_eventPicture
+	is_triggered_only = yes
+	
+	#Burn it all
+	option = {
+		name = kas.mission_event.6.a
+        ai_chance = {
+			factor = 1
+		}
+		126 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_devastation = 50
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = yes
+			}
+			add_base_tax = 1
+			add_base_manpower = 1
+			add_base_production = 1
+		}
+		add_years_of_income = 2
+		large_decrease_of_gnomish_tolerance_effect = yes
+	}
+
+	#Spare the gnomes
+	option = {
+		name = kas.mission_event.6.b
+        ai_chance = {
+			factor = 1
+		}
+		add_stability_or_adm_power = yes
+		small_increase_of_gnomish_tolerance_effect = yes
+	}
+}
+
+#Gobble loyal vassals. Yum.
+country_event = {
+	id = kas_mission_event.7
+	title = kas.mission_event.7.title
+	desc = kas.mission_event.7.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = kas.mission_event.7.a
+        ai_chance = {
+			factor = 1
+		}
+		hidden_effect = {
+			FROM = {
+				inherit = THIS
+			}
+		}
+	}
+}
+
+#End of Gnome Wars
+country_event = {
+	id = kas_mission_event.8
+	title = kas.mission_event.8.title
+	desc = kas.mission_event.8.desc
+	picture = SIEGE_PRAGUE_CASTLE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Mend ties with the Gnomes
+	option = {
+		name = kas.mission_event.8.a
+        ai_chance = {
+			factor = 0.5
+		}
+		custom_tooltip = kas.mission_event.8.a1.tooltip
+		small_increase_of_gnomish_tolerance_effect = yes
+		custom_tooltip = kas.mission_event.8.a.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = gnomish
+				}
+				add_local_autonomy = 50
+			}
+			set_country_flag = KAS_Gnome_War_Gnome_Friends
+			clr_country_flag = KAS_Gnome_War_No_Conciliation
+			swap_non_generic_missions = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = A06
+				}
+			}
+			169 = {
+				cede_province = A06
+				remove_core = ROOT
+			}
+			create_subject = {
+				subject_type = autonomous_vassal
+				subject = A06
+			}
+		}
+	}
+
+	#No more gnomes
+	option = {
+		name = kas.mission_event.8.b
+		ai_chance = {
+			factor = 1
+		}
+		custom_tooltip = kas.mission_event.8.b1.tooltip
+		large_decrease_of_gnomish_tolerance_effect = yes
+		custom_tooltip = kas.mission_event.8.b.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture_group = gnomish
+				}
+				add_nationalism = 10
+			}
+			set_country_flag = KAS_Gnome_War_No_Conciliation
+			clr_country_flag = KAS_Gnome_War_Gnome_Friends
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+#Kobold Markets
+country_event = {
+	id = kas_mission_event.9
+	title = kas.mission_event.9.title
+	desc = kas.mission_event.9.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Open our markets to our neighbours!
+	option = {
+		name = kas.mission_event.9.a
+		small_increase_of_gnomish_tolerance_effect = yes
+		small_increase_of_human_tolerance_effect = yes
+		small_increase_of_dwarven_tolerance_effect = yes
+		custom_tooltip = kas.mission_event.9.market.tooltip
+        hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = yes
+				}
+				add_province_triggered_modifier = KAS_Great_Market
+			}
+		}
+	}
+
+	#Sell our wares locally
+	option = {
+		name = kas.mission_event.9.b
+		add_years_of_owned_provinces_production_income = {
+			years = 2
+			trigger = {
+				OR = {
+					trade_goods = iron
+					trade_goods = copper
+				}
+			}
+			custom_tooltip = kas.mission_event.9.b.tooltip
+		}
+		add_mercantilism = 5
+		custom_tooltip = kas.mission_event.9.market.tooltip
+        hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = yes
+				}
+				add_province_triggered_modifier = KAS_Great_Market
+			}
+		}
+		ai_chance = {
+			factor = 1.5
+		}
+	}
+
+	#Sell our wares abroad!
+	option = {
+		name = kas.mission_event.9.c
+		add_years_of_owned_provinces_production_income = {
+			years = 3
+			trigger = {
+				OR = {
+					trade_goods = iron
+					trade_goods = copper
+				}
+			}
+			custom_tooltip = kas.mission_event.9.b.tooltip
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_mercantilism = -10
+	}
+
+	#Send gifts to our neighbours
+	option = {
+		name = kas.mission_event.9.d
+		every_neighbor_country = {
+			limit = {
+				NOT = {
+					war_with = ROOT
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = sent_gift
+			}
+		}
+        ai_chance = {
+			factor = 0.5
+		}
+		random_list = {
+			33 = {
+				medium_increase_of_gnomish_tolerance_effect = yes
+			}
+			33 = {
+				medium_increase_of_human_tolerance_effect = yes
+			}
+			33 = {
+				medium_increase_of_dwarven_tolerance_effect = yes
+			}
+		}
+	}
+}
+
+#Eaglecrest
+country_event = {
+	id = kas_mission_event.10
+	title = kas.mission_event.10.title
+	desc = kas.mission_event.10.desc
+	picture = IMPALED_SOLDIERS_eventPicture
+	
+	is_triggered_only = yes
+
+	#One option only
+	option = {
+		name = kas.mission_event.10.a
+        ai_chance = {
+			factor = 1
+		}
+		medium_decrease_of_human_tolerance_effect = yes
+		213 = {
+			set_base_tax = 1
+			set_base_production = 1
+			set_base_manpower = 1
+			add_devastation = 100
+			remove_human_minority_size_effect = yes
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+	}
+}
+
+#Military Reforms
+country_event = {
+	id = kas_mission_event.11
+	title = kas.mission_event.11.title
+	desc = kas.mission_event.11.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Focus on training
+	option = {
+		name = kas.mission_event.11.a
+        ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = KAS_training_tactics_focus
+			duration = -1
+		}
+	}
+
+	#Focus on military theory
+	option = {
+		name = kas.mission_event.11.b
+        ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = KAS_theory_focus
+			duration = -1
+		}
+	}
+
+	#Focus on artificiery
+	option = {
+		name = kas.mission_event.11.c
+        ai_chance = {
+			factor = 1
+		}
+		add_country_modifier = {
+			name = KAS_artificery_focus
+			duration = -1
+		}
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = 5
+		}
+	}
+}
+
+
+#The Many Kobolds
+country_event = {
+	id = kas_mission_event.12
+	title = kas.mission_event.12.title
+	desc = kas.mission_event.12.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#Change primary culture
+	option = {
+		name = kas.mission_event.12.a
+		change_primary_culture = kobildzani_kobold
+		custom_tooltip = kas.mission_event.12.a.completion.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture = bluescale_kobold
+						culture = redscale_kobold
+						culture = greenscale_kobold
+					}
+				}
+				change_culture = kobildzani_kobold
+			}
+		}
+        ai_chance = {
+			factor = 1.5
+		}
+
+	}
+
+	#Accept the cultures
+	option = {
+		name = kas.mission_event.12.b
+        ai_chance = {
+			factor = 0.5
+		}
+		add_country_modifier = {
+			name = KAS_Many_Kobolds
+			duration = -1
+		}
+		if = {
+			limit = {
+				NOT = {
+					accepted_culture = redscale_kobold 
+				}
+			}
+			add_accepted_culture = redscale_kobold 
+		}
+		if = {
+			limit = {
+				NOT = {
+					accepted_culture = bluescale_kobold
+				}
+			}
+			add_accepted_culture = bluescale_kobold
+		}
+		if = {
+			limit = {
+				NOT = {
+					accepted_culture = greenscale_kobold
+				}
+			}
+			add_accepted_culture = greenscale_kobold
+		}
+	}
+}
+
+#The Future of Kobold Kind
+country_event = {
+	id = kas_mission_event.13
+	title = kas.mission_event.13.title
+	desc = kas.mission_event.13.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	#We are Dragons
+	option = {
+		name = kas.mission_event.13.a
+		custom_tooltip = kas.mission_event.13.a.tooltip
+		swap_non_generic_missions = yes
+		hidden_effect = {
+			set_country_flag = KAS_Second_Dragonwake
+		}
+        ai_chance = {
+			factor = 1
+		}
+	}
+
+	#We are traders
+	option = {
+		name = kas.mission_event.13.b
+		custom_tooltip = kas.mission_event.13.b.tooltip
+		swap_non_generic_missions = yes
+		hidden_effect = {
+			set_country_flag = KAS_Kobld_Merchant_Empire
+		}
+        ai_chance = {
+			factor = 1
+		}
+	}
+
+	#We are scientists
+	option = {
+		name = kas.mission_event.13.c
+		custom_tooltip = kas.mission_event.13.c.tooltip
+		swap_non_generic_missions = yes
+		hidden_effect = {
+			set_country_flag = KAS_Kobold_Science
+		}
+        ai_chance = {
+			factor = 1
+		}
+	}
+}

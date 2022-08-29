@@ -1,0 +1,18 @@
+#Events
+
+#Add event for sporadic gnome conversion once they are at least coexisting for the tolerance path
+#Add scientific debate path
+#Add gnomish tension events
+#Add factional flavour events
+#Add kobold artifiecry event for the non tolerance path
+#Add event chain for cracking gnomish code
+#Add random religion events
+
+#Religion 
+
+#Add cults and upgrade mechanic
+#Upgrade monument with tooltip for new cults instead of the tolerance true faith increase
+
+#Government
+
+#Add new government reform, remove others

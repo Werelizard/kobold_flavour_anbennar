@@ -1,0 +1,90 @@
+﻿l_english:
+ #Mission events
+ 
+ kas.mission_event.1.title:0 "Three Yips For Kobold-Kind"
+ kas.mission_event.1.desc:0 "Kobolds are not kindly looked upon by neighbours, be they tall-folk or goblin, cave or citydweller. This is not wholly unwarranted: our kind is one which is acutely territorial, well-versed in the crafting of elaborate traps and dens - not to mention our unquenchable thirst for gold and fine items. After the events of the Dragonwake, during which the predecessors of [Root.Monarch.GetTitle] [Root.Monarch.GetName] succesfully drove off the pesky Gnomes - securing our place in the sunlight.\n\nThis of course did not last, for there can only be one victor after all - and the clans splintered. Factionalism tore our people apart: Red Scales against Green and Blue, Blue against Green.\n\nThis story we know, for it is [Root.Monarch.GetTitle] [Root.Monarch.GetName]'s story. However it is not the end of [Root.Monarch.GetHerHis] or our people's tale: we have risen, conquered our adversaries and asserted ourselves. Even if we may not be of the sun, we too will stake our claim to the lands above, whether the storm and in time, wield it. With this claim however has come the need for change, the need to bring about a new era. With all of Kobold-Kind on the Dragon Coast either under our control or in our sphere of influence, we can finally at last realise our dream: Kobildzan, the great Kobold home in the west.\n\nNever again shall we be disunited, never again shall we be apart. We are the heirs to Dragons and we too have a right to glory!"
+ kas.mission_event.1.a:0 "Let us be one people!"
+ 
+ kas.mission_event.2.title:0 "[From.GetName] Demands our Submission"
+ kas.mission_event.2.desc:0 "Messengers arrived in the night, bring a message from [From.Monarch.GetTitle] [From.Monarch.GetName]. As they have clearly outmatched us in size and in strength, they demand our submission, in the name of unity. This has put our [Root.Monarch.GetTitle] in a delicate position, as the threat of war will undoubtedly loom upon us whould we refuse - if it does not already...how should we answer?"
+ kas.mission_event.2.a:0 "We will bend the knee. Hail [From.GetName]!"
+ kas.mission_event.2.b:0 "Never!"
+
+ kas.mission_event.3.title:0 "[From.GetName] Accepts our Offer!"
+ kas.mission_event.3.desc:0 "Our messagers returned from [From.GetName] with wonderful news: [From.Monarch.GetTitle] [From.Monarch.GetName] has accepted our offer! We are now one step closer to uniting Kobold-Kind under our leadership."
+ kas.mission_event.3.a:0 "Excellent!"
+
+ kas.mission_event.4.title:0 "[From.GetName] Remains Defiant!"
+ kas.mission_event.4.desc:0 "Our messagers returned from [From.GetName] with dire news: [From.Monarch.GetTitle] [From.Monarch.GetName] has - rather uneloquently - denied oour generous offer. This leaves us with very little to no choice; we can press our rightful claims and bring them to their knees by force, or we can attempt to sweep this under the rug, though our [Root.Monarch.GetTitle]'s legitimacy will surely suffer should we choose that option."
+ kas.mission_event.4.a:0 "They have chosen war!"
+ kas.mission_event.4.b:0 "I don't have time for this."
+ kas.mission_event.4.c:0 "Maybe we should back down..."
+
+ kas.mission_event.5.title:0 "The Sack of Nimscodd"
+ kas.mission_event.5.desc:0 "Nimscodd. How many times have we dreamed of breaching its walls, setting its towers ablaze and bringing its citizens to their knees?\n\nAs our troops breach the last of the defenses - fangs and knives at the ready - we are presented with two options: the first is of course to indluge, and to bring upon the Gnomes the full rightfull wrath befitting our Dragonic ancestry. The second however would be to show restraint - mercy even. While the former would surely set an example to all other would-be invaders and claimants, the latter also presents us with a budding opportunity to end out strife with the Gnomes in a more diplomatic way."
+ kas.mission_event.5.a:0 "Raze the city."
+ kas.mission_event.5.b:0 "Spare the population."
+
+ kas.mission_event.6.title:0 "The Fall of Portnamm"
+ kas.mission_event.6.desc:0 "The smell of apples, fresh fish, fire and death fills our soldiers' nosetrils as they advance upon the last standing redoubt - finally bringing Portnamm under our control. The people covwer, ever fearful of how our loyal clansmen and clanswomen will avenge the long months of siege and even more arduous days of street fighting. We could, simply put, burn it all down, reduce it to a distant memory - a gorey and fiery example of the fate awaiting all that would support the Gnomes. Or we content ourselves with finishing off what is left of the Gnomes' main force in a gesture of tolerance."
+ kas.mission_event.6.a:0 "Raze the city."
+ kas.mission_event.6.b:0 "Spare the population"
+
+ kas.mission_event.8.title:0 "The End of the Gnomish War"
+ kas.mission_event.8.desc:0 "War is - no matter how one puts it - an ugly thing. The spillage of blood always leaves a scar on the land, on people and on history. As [From.Monarch.GetName] trudges throughout the ash-covered field whereupon the last decisive battle of the war was fought, they reminisce on why such a brutal campaign had to be fought in the first place: the Dragonwake shattered the hold of the Gnomes, and building on that momentum we succesfully struck a decisive and final blow upon the Nimscodd Gnomes. Surely though there must be another reason for this to have happened beyond a simple cause and effect - afterall it is not in our blood to seek conflict.\n\nLeft to ponder for hours, our [Root.Monarch.GetTitle]'s mind errs, as all around [Root.Monarch.GetHerHim] the last of the fires smoulder and the wind abates - leaving behind only a silence longing to be filled by an answer."
+ kas.mission_event.8.a:0 "War was always a necessity, never an extermination."
+ kas.mission_event.8.b:0 "The Gnomes must be driven out of the Dragon Coast!"
+ kas.mission_event.8.a.tooltip:0 "Every Gnomish province will gain 50 autonomy."
+ kas.mission_event.8.a1.tooltip:0 "§TThis will set us down the path of cooperation and eventually reconciliation with the Gnomes.§!"
+ kas.mission_event.8.b.tooltip:0 "Every Gnomish province will gain 15 years of seperatism."
+ kas.mission_event.8.b1.tooltip:0 "§TThis will put us on a track towards removing the Gnomes from the coast.§!"
+
+
+ kas.mission_event.9.title:0 "The Kobold Markets"
+ kas.mission_event.9.desc:0 "Our efforts to sponsor local craftsmen have led to an upsurge in production as well as a veritable crafting frenzy: pots, vases, necklaces, collars and trinkets are flowing throughout our country like a river of silver and gold. With such an abundance of goods, we are in dire need of new opportunities to sell them. Ever since the Dragonwake we have always struggled to find proper markets for our exports but this may very much soon change.\n\nNaturally, we could sell all of our stock in local markets. However, there is also the option to open our trade to lands further away - though that will undoubtebly undercut any attempt at protectionism from our part. Our neighbours on the other hand may very well themselves present a proper, and potentially lucrative avenue for our goods as well, with the unique opportunity to draw some among the tall-folk to establish small trading communities within our capital."
+ kas.mission_event.9.a:0 "We should open our markets to foreigners!"
+ kas.mission_event.9.b:0 "We should focus on selling them at local fairs."
+ kas.mission_event.9.b.tooltip:0 "from our iron and copper producing provinces."
+ kas.mission_event.9.c:0 "We should sell our goods abroad!"
+ kas.mission_event.9.d:0 "Send generous gifts to our neighbours instead!"
+ kas.mission_event.9.market.tooltip:0 "[Root.Capital.GetCapitalName] will get a permanent modifier decreasing  local development cost, trade value and insitution spread."
+
+ kas.mission_event.10.title:0 "The Fall of Eaglecrest"
+ kas.mission_event.10.desc:0 "We now control the city of Eaglecrest, heart of the Dragonhills and one of the most despicable places we have ever known. Even the gnomes did not flay our skin from our still-warm corpses and parade around proudly in their "scalemail."\n\nThis ends today. Eaglecrest ends today. These demons will answer for their grisly tradition — and as human hides have no worth in combat, we shall find a more... stylish means of response. Let's see how smug they look when their vaunted eagles plummet from the sky filled with shot!"
+ kas.mission_event.10.a:0 "Death has come for Eaglecrest."
+
+ kas.mission_event.11.title:0 "The  Great Military Reforms of [Root.Monarch.GetName]"
+ kas.mission_event.11.desc:0 "Our military has always somewhat lagged behind that of our tall-folk neighbours. Even if we have managed to survive - and even thrive - our military capabilities have become a matter of grave concern to our clansmen. A profound restructuration is needed, and that is what we will set out to do - though we will not be able to overhaul the entirerty of our military in one go. Rather, we will need to choose our approach carefully.\n\nSome of our advisors have voiced concerns that the weapons and tactics of old will not continue to serve us as well and have proposed a slow but painful modernisation program. Another and rather vocal minority insist that we should swallow our pride and turn to employ foreign help. Last but not least are the Artificiers, who have clamoured on and on about the necessity of equipping our troops with experimental devices."
+ kas.mission_event.11.a:0 "Focus on implementing infantry reforms."
+ kas.mission_event.11.b:0 "Focus on military theory."
+ kas.mission_event.11.c:0 "Let the Artificiers have their fun."
+
+ kas.mission_event.12.title:0 "The Many Kobolds of [Root.GetName]"
+ kas.mission_event.12.desc:0 "We are a nation of Kobolds, but even then we can still be hardly called one people. Bluescale, Redscale, Greenscale - all have their own identity. After our unification however, and recent efforts to bring all of our subjects into one, these divisions increasingly become irrelevant. We could sheperd our people towards embracing one shared identity, or we could instead continue celebrating our diversity. The choice is ours."
+ kas.mission_event.12.a.completion.tooltip:0 "Every owned province in the §YKobold§! culture group will change to the §YKobildzani§! culture."
+
+ kas.mission_event.13.title:0 "The Fate of Kobold-Kind"
+ kas.mission_event.13.desc:0 "With the Dragonwake and even the recent wars with the Gnomes a memory, and our people finally consolidated into one, now comes the most difficult question of them all: who are the Kobolds of the Dragon Coast? Are we the scions of the Dragons of old, the harbringers of fire? Are we adventurers, merchants and explorers? Or are we craftsmen, scientists - whose minds will always be perpetually turned towards whatever discovery the future will hold?"¨
+ kas.mission_event.13.a:0 "We are the inheritors of Dragons!"
+ kas.mission_event.13.a.tooltip:0 "This unlocks the path of the §Rsecond Dragonwake§!, driving us towards religious zeal and confrontation with the Empire of Anbennar."
+ kas.mission_event.13.b:0 "The world is ripe for discovery and exploration - why settle for the Coast when we can cross the sea?"
+ kas.mission_event.13.b.tooltip:0 "This unlocks the path of the §OKobold mercantilism§!, driving us towards establishing colonies and trade domination."
+ kas.mission_event.13.c:0 "Let the Tall-Folk have their glory and their gold, we shall have our science!"
+ kas.mission_event.13.c.tooltip:0 "This sets up down the path towards establishing a §TKobold technocracy§!, unlocking the myseries of science and artificery." 
+
+ kas_research_event.100.title:0 "Mastering Artificery"
+ kas_research_event.100.desc:0 ""
+
+ #Faction events
+
+ kas_factions_event.1.title:0 "The succession of [Root.GetName]"
+ kas_factions_event.1.desc:0 "With the passing of our late ruler, we must now xhoose a new leader among the three great clans which form [Root.GetName]. Among the Redscales, Greenscales and Bluescales, the selection has been narrowed down to three candidates: an upcoming and ambitious Redscale, a bold Greenscale and a faithul Bluescale. Our choice will not only determine how our people will be led, but also influence which faction will come into power."
+ kas.factions_event.1.a:0 "Arrange for the Redscales' candidate to be appointed to succeed."
+ kas.factions_event.1.b:0 "Arrange for the Greenscales' chosen to be made heir apparent."
+ kas.factions_event.1.c:0 "Arrange for the Bluescales' heir to be favoured."
+
+ KAS_election_faction_influence.tooltip:0 "The candidate's faction will gain §Y10§! influence, while other factions will lose §Y5§! influence."
+ kas_factions_event.1.rebellion.tooltip:0 "§RChoosing an heir from a faction which already holds considerable power might spark a rebellion!§!"
+ KAS.selectedRedscaleRuler.tooltip:0 "A new monarch comes to the throne, with a guaranteed £mil£ §Ymilitary skill§! of §Y3§! at minimum but with a maximum £dip£ §Ydiplomatic§! and £adm£ §Yadministrative§! skills of §Y4§!."
+ KAS.selectedGreenscaleRuler.tooltip:0 "A new monarch comes to the throne, with a guaranteed £dip£ §Ydiplomatic skill§! of §Y3§! at minimum but with a maximum £mil£ §Ymilitary§! and £adm£ §Yadministrative§! skills of §Y4§!."
+ KAS.selectedBluescaleRuler.tooltip:0 "A new monarch comes to the throne, with a guaranteed £adm£ §Ymilitary skill§! of §Y3§! at minimum but with a maximum £dip£ §Ydiplomatic§! and £mil£ §Yadministrative§! skills of §Y4§!."

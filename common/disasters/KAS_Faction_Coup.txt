@@ -1,0 +1,180 @@
+#############################
+#Kobold Federation Civil War#
+#############################
+
+KAS_Civil_War = {
+	potential = {
+		has_reform = KAS_Kobildzan_reform
+		NOT = {
+			completed_mission = KAS_Delicate_Balance
+		}
+	}
+
+	can_start = {
+		has_any_disaster = no
+		NOT = {
+			stability = 1
+		}
+		OR = {
+			faction_influence = {
+				faction = faction_redscales
+				influence = 70
+			}
+			faction_influence = {
+				faction = faction_greenscales
+				influence = 70
+			}
+			faction_influence = {
+				faction = faction_bluescales
+				influence = 70
+			}
+		}
+	}
+
+	progress = {
+        modifier = {
+                factor = 1
+                always = yes
+        }
+		modifier = {
+			factor = 1
+			custom_trigger_tooltip = {
+				tooltip = KAS_CivilWar_Factions_1.tooltip
+				OR = {
+					faction_influence = {
+						faction = faction_redscales
+						influence = 70
+					}
+					faction_influence = {
+						faction = faction_greenscales
+						influence = 70
+					}
+					faction_influence = {
+						faction = faction_bluescales
+						influence = 70
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			custom_trigger_tooltip = {
+				tooltip = KAS_CivilWar_Factions_2.tooltip
+				OR = {
+					faction_influence = {
+						faction = faction_redscales
+						influence = 80
+					}
+					faction_influence = {
+						faction = faction_greenscales
+						influence = 80
+					}
+					faction_influence = {
+						faction = faction_bluescales
+						influence = 80
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			custom_trigger_tooltip = {
+				tooltip = KAS_CivilWar_Factions_3.tooltip
+				OR = {
+					faction_influence = {
+						faction = faction_redscales
+						influence = 90
+					}
+					faction_influence = {
+						faction = faction_greenscales
+						influence = 90
+					}
+					faction_influence = {
+						faction = faction_bluescales
+						influence = 90
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			NOT = {
+				legitimacy_equivalent = 100
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				legitimacy_equivalent = 75
+			}
+		}
+		modifier = {
+			factor = 4
+			NOT = {
+				legitimacy_equivalent = 50
+			}
+		}
+	}
+
+	modifier = {
+		republican_tradition = -0.5
+		global_unrest = 5
+	}
+
+	can_end = {
+		legitimacy_equivalent = 90
+		AND = {
+			NOT = {
+				faction_influence = {
+					faction = faction_redscales
+					influence = 60
+				}
+			}
+			NOT = {
+				faction_influence = {
+					faction = faction_greenscales
+					influence = 60
+				}
+			}
+			NOT = {
+				faction_influence = {
+					faction = faction_bluescales
+					influence = 60
+				}
+			}
+		}
+		NOT = {
+			
+		}
+	}
+
+	can_stop = {
+		OR = {
+			AND = {
+				NOT = {
+					faction_influence = {
+						faction = faction_redscales
+						influence = 60
+					}
+				}
+				NOT = {
+					faction_influence = {
+						faction = faction_greenscales
+						influence = 60
+					}
+				}
+				NOT = {
+					faction_influence = {
+						faction = faction_bluescales
+						influence = 60
+					}
+				}
+			}
+			NOT = {
+				has_reform = KAS_Kobildzan_reform
+			}
+			
+		}
+	}
+
+}

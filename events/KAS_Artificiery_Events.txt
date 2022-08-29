@@ -1,0 +1,98 @@
+namespace = kas_research_event
+
+###################
+#Inventions events#
+###################
+
+country_event = {
+	id = kas_research_event.1
+	title = kas_research_event.1.title
+	desc = kas_research_event.1.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.1.a
+	}
+}
+
+country_event = {
+	id = kas_research_event.2
+	title = kas_research_event.2.title
+	desc = kas_research_event.2.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.2.a
+	}
+}
+
+country_event = {
+	id = kas_research_event.3
+	title = kas_research_event.3.title
+	desc = kas_research_event.3.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.3.a
+	}
+}
+
+country_event = {
+	id = kas_research_event.4
+	title = kas_research_event.4.title
+	desc = kas_research_event.4.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.4.a
+	}
+}
+
+
+#########################
+#Kobold Artificery event#
+#########################
+
+country_event = {
+	id = kas_research_event.5
+	title = kas_research_event.5.title
+	desc = kas_research_event.5.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.5.a
+	}
+}
+
+#########################
+#Cracking the Gnome Code#
+#########################
+
+country_event = {
+	id = kas_research_event.6
+	title = kas_research_event.6.title
+	desc = kas_research_event.6.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.6.a
+	}
+}
+
+country_event = {
+	id = kas_research_event.100
+	title = kas_research_event.100.title
+	desc = kas_research_event.100.desc
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.100.a
+	}
+}

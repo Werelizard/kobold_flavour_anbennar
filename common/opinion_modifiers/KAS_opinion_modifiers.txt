@@ -1,0 +1,12 @@
+#Timed
+KAS_gifted_goods = {
+	opinion = 40
+	max = 40
+	yearly_decay = -01
+}
+
+KAS_restored_bonds = {
+	opinion = 50
+	max = 50
+	months = 1200
+}

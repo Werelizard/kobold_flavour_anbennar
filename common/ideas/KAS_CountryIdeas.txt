@@ -1,0 +1,293 @@
+#Idea Group for the Kobold Ascendency Mod
+
+#Green Scales Ideas
+KAS_GSC_ideas = {
+    start = {
+        ship_durability = 0.1 #Green Scale Seamanship
+        hostile_attrition = 2 #Ambush mastery
+    }
+    bonus = {
+        global_trade_power = 0.15
+    }
+
+    trigger = {
+        tag = A28
+    }
+    free = yes
+
+    kas_gsc_colonial_spree = {
+        naval_forcelimit_modifier = 0.25
+        range = 0.25
+    }
+    kas_gsc_coastal_burrows = {
+        own_coast_naval_combat_bonus = 1.0
+        defensiveness = 0.15
+    }
+    kas_gsc_trade_expansion = {
+        global_foreign_trade_power = 0.2
+    }
+    kas_gsc_storm_manoeuvre = {
+        leader_naval_fire = 2
+        movement_speed_in_fleet_modifier = 1
+    }
+    kas_gsc_kobold_sea = {
+        prestige_from_naval = 1.5
+        navy_tradition = 0.5
+    }
+    kas_gsc_northern_scales = {
+        improve_relation_modifier = 0.2
+    }
+    kas_gsc_kobold_push_inwards = {
+        development_cost = -0.1
+        global_autonomy = -0.02
+    }
+}
+
+#Red Scales Ideas
+KAS_RSC_ideas = {
+    start = {
+        shock_damage = 0.1 #Ruthless pludnerers
+        hostile_attrition = 2 #Boobytrap masters
+    }
+    bonus = {
+        province_warscore_cost = -0.2
+    }
+
+    trigger = {
+        tag = A26
+    }
+    free = yes
+
+    KAS_RSC_flank_ambush = {
+        movement_speed = 0.10
+        leader_land_shock = 1
+    }
+    KAS_RSC_tribute_collectors = {
+        global_manpower_modifier = 0.15
+        vassal_income = 0.25
+    }
+    KAS_RSC_gnome_slayers = {
+        years_of_nationalism = -5
+    }
+    KAS_RSC_blood_red_scales = {
+        unjustified_demands = -0.1
+    }
+    KAS_RSC_hill_towns = {
+        global_regiment_cost = -0.15
+    }
+    KAS_RSC_firebombs = {
+        siege_ability = 0.2
+        siege_blockade_progress = 1
+    }
+    KAS_RSC_the_yipping_scourge = {
+        power_projection_from_insults = 1
+    }
+}
+
+#Blue Scales Ideas
+KAS_BSC_ideas = {
+    start = {
+        defensiveness = 0.2 #Unfaltering defences
+        hostile_attrition = 2 #Many dens
+    }
+    bonus = {
+        enemy_core_creation = 0.5
+    }
+
+    trigger = {
+        tag = A27
+    }
+    free = yes
+
+    KAS_BSC_dig_and_hide = {
+        fort_maintenance_modifier = -0.33
+        hostile_attrition = 1
+    }
+    KAS_BSC_treasure_guardians = {
+        prestige = 1
+    }
+    KAS_BSC_integrate_clans = {
+        autonomy_change_time = -0.25
+        diplomatic_annexation_cost = -0.2
+    }
+    KAS_BSC_communality = {
+        same_culture_advisor_cost = -0.25
+        num_accepted_cultures = 1 
+    }
+    KAS_BSC_kobold_unification = {
+        reform_progress_growth = 0.15
+        state_maintenance_modifier = -0.2
+    }
+    KAS_BSC_gleaming_caves = {
+        production_efficiency = 0.05
+        global_prov_trade_power_modifier = 0.25
+    }
+    KAS_BSC_resist_storm = {
+        shock_damage_received = -0.1
+        land_morale = 0.05
+    }
+}
+
+#Dark Scales Ideas
+KAS_DSC_ideas = {
+    start = {
+        land_attrition = -0.1 #Foragers of the deep
+        global_colonial_growth = 25 #Kobold claimants
+    }
+    bonus = {
+        idea_cost = -0.1
+    }
+    free = yes
+
+    trigger = {
+        tag = Z55
+    }
+
+    KAS_DSC_settlers_dwarovar = {
+        core_creation = -0.1
+    }
+    KAS_DSC_mushroom_collectors = {
+        manpower_recovery_speed = 0.2
+        global_manpower_modifier = 0.10
+    }
+    KAS_DSC_steal_from_dwarves = {
+        adm_tech_cost_modifier = -0.1
+    }
+    KAS_DSC_tunnel_prospector_companies = {
+        movement_speed = 0.15
+        envoy_travel_time = -0.25
+    }
+    KAS_DSC_small_but_unbroken = {
+        land_morale = 0.10
+    }
+    KAS_DSC_hope_for_kobold_kind = {
+        war_exhaustion_cost = -0.33
+    }
+    KAS_BSC_light_in_the_Dark = {
+        prestige_decay = -0.01
+        diplomatic_reputation = 1
+    }
+}
+
+#Unified Kobold Coast Kingdom 
+KAS_KBZ_ideas = {
+    start = { 
+        defensiveness = 0.25 #Dig until bedrock 
+        land_forcelimit_modifier = 0.25 #The Many Kobolds 
+    } 
+    bonus = { 
+        leader_land_fire = 2
+    } 
+    free = yes
+
+    trigger = { 
+        tag = Z38
+    }
+
+    KAS_KBZ_Kobold_Clans = { 
+        global_manpower_modifier = 0.30 
+    } 
+    KAS_KBZ_Claim_Coast = { 
+        core_creation = -0.15
+    } 
+    KAS_KBZ_Stand_Tall = { 
+        shock_damage_received = -0.05
+        recover_army_morale_speed = 0.25
+    } 
+    KAS_KBZ_A_Kobold_In_Every_Inn_And_Stall = {
+        global_trade_power = 0.2 
+    } 
+    KAS_KBZ_Crafty_Kobolds = { 
+        hostile_attrition = 2 
+        production_efficiency = 0.1 
+    } 
+    KAS_KBZ_Nation_Reborn = { 
+        prestige = 1 
+    } 
+    KAS_KBZ_birthplace_dragonsteel = { 
+        artificers_loyalty_modifier = 0.1 
+        artificers_influence_modifier = 0.1 
+        fire_damage_received = -0.1
+    } 
+}
+
+# #Darkscale Kingdom idea 
+# KAS_DSK_ideas = { 
+#     start = { 
+#         infantry_power = 0.15 #Kobold Guard 
+#         build_cost = -0.1 #New Kobold Architecture 
+#     } 
+#     bonus = { 
+#         land_morale = 0.15 
+#     } 
+
+#     trigger = { 
+#         tag = DSK 
+#     } 
+
+#     KAS_DSK_Claimants_Western_Dwarovar = { 
+#         core_creation = -0.15 
+#     } 
+#     KAS_DSK_Enemies_Everywhere = { 
+#         global_spy_offense = 0.5 
+#         diplomat = 1 
+#     } 
+#     KAS_DSK_Break_The_Dwarves = { 
+#         morale_damage = 0.1 
+#     } 
+#     KAS_DSK_Sunless_Dawn = { 
+#         technology_cost = -0.1 
+#         idea_cost = -0.1 
+#     } 
+#     KAS_DSK_Kobold_new_home = { 
+#         advisor_pool = 1 
+#         advisor_cost = -0.25 
+#     }
+#     KAS_DSK_Rebuild_The_Underrail = { 
+#         movement_speed = 0.2 
+#         governing_capacity_modifier = 0.15 
+#     } 
+#         KAS_DSK_Dwarovar_Industry = { 
+#         global_trade_goods_size_modifier = 0.1 
+#     } 
+# }
+
+# #Unified Kobold Coast Kingdom 
+# KAS_KBZ_ideas = {
+#     start = { 
+#         defensiveness = 0.2 #Dig until bedrock 
+#         land_forcelimit_modifier = 0.2 #The Many Kobolds 
+#     } 
+#     bonus = { 
+#         own_territory_dice_roll_bonus = 2 
+#     } 
+
+#     trigger = { 
+#         tag = KBZ 
+#     }
+
+#     KAS_KBZ_Kobold_Clans = { 
+#         global_manpower_modifier = 0.2 
+#     } 
+#     KAS_KBZ_Claim_Coast = { 
+#         core_creation = 0.15 
+#     } 
+#     KAS_KBZ_Stand_Tall = { 
+#         shock_damage_received = -0.15 
+#     } 
+#     KAS_KBZ_A_Kobold_In_Every_Inn_And_Stall = {
+#         global_trade_power = 0.2 
+#     } 
+#     KAS_KBZ_Crafty_Kobolds = { 
+#         hostile_attrition = 2 
+#         production_efficiency = 0.1 
+#     } 
+#     KAS_KBZ_Nation_Reborn = { 
+#         prestige = 1 
+#     } 
+#     KAS_KBZ_birthplace_dragonsteel = { 
+#         artificers_loyalty_modifier = 0.1 
+#         artificers_influence_modifier = 0.1 
+#         fire_damage_received = -0.1 
+#     } 
+# }

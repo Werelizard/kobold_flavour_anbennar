@@ -1,0 +1,482 @@
+
+####################################
+# KOBILDZAN PRE-BRANCHING MISSIONS #
+####################################
+
+KAS_KOBILDZAN_Right ={
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+
+	KAS_Southern_Frontier = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_mission_defy_tallfolk
+		}
+		position = 3
+		provinces_to_highlight = {
+			area = gnomish_pass_area
+			area = reaver_coast_area
+			area = iochand_area
+		}
+		trigger = {
+			NOT = {
+				is_at_war = yes
+			}
+			calc_true_if = {
+				any_owned_province = {
+					is_core = ROOT
+					OR = {
+						area = gnomish_pass_area
+						area = reaver_coast_area
+						area = iochand_area
+					}
+				}
+				amount = 10
+			}
+			any_owned_province = {
+				OR = {
+					area = gnomish_pass_area
+					area = reaver_coast_area
+					area = iochand_area
+				}
+				fort_level = 2
+			}
+		}
+		effect = {
+			dragonhills_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	KAS_Destroy_Eaglecrest = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Southern_Frontier
+		}
+		position = 4
+		trigger = {
+			owns_all_provinces = {
+				area = dragonhills_area
+			}
+			controls = 213
+		}
+		effect = {
+			country_event = {
+				id = kas_mission_event.10
+			}
+		}
+	}
+
+	KAS_Kobold_Crafts = {
+		required_missions = {}
+		position = 5
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+
+		trigger = {
+			OR = {
+				calc_true_if = {
+					OR = {
+						any_owned_province = {
+							trade_goods = iron
+							base_production = 10
+						}
+						any_owned_province = {
+							trade_goods = copper
+							base_production = 10
+						}
+					}
+					amount = 8
+				}
+				OR = {
+					trading_bonus = {
+						trade_goods = iron
+						value = yes
+					}
+					trading_bonus = {
+						trade_goods = copper
+						value = yes
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kas_mission_event.9
+			}
+		}
+	}
+
+	KAS_kobold_hoard_proper = {
+		required_missions = {
+			KAS_Kobold_Crafts
+		}
+		position = 6
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+
+		provinces_to_highlight = {
+			province_id = 189
+		}
+
+		trigger = {
+			AND = {
+				is_core = 189
+				controls = 189
+			}
+			monthly_income = 100
+			treasury = 5000
+			OR = {
+				in_golden_age = yes
+				NOT = {
+					great_power_rank = 5
+				}
+			}
+		}
+
+		effect = {
+			add_treasury = -5000
+			189 = {
+				add_province_modifier = {
+					name = KAS_Proper_Income_Reward
+					duration = -1
+				}
+				change_trade_goods = gold
+				add_base_tax = 2
+				add_base_production = 4
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = KAS_Proper_Income_Reward_prosperity
+				duration = 10950
+			}
+		}
+	}
+}
+
+KAS_KOBILDZAN_Middle = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+
+	KAS_Delicate_Balance = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Kobold_kingdom_formation
+		}
+		position = 5
+		trigger = {
+			NOT = {
+				has_any_disaster = yes
+			}
+			NOT = {
+				is_at_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Redscales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Redscales
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Greenscales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Greenscales
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Bluescales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Bluescales
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_Delicate_Balance.completion.tooltip
+			country_event = {
+				id =  kas_mission_event.12
+			}
+		}
+	}
+
+	KAS_Kobold_Identity = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Delicate_Balance
+		}
+		position = 6
+		trigger = {
+			has_institution = renaissance
+			NOT = {
+				has_country_modifier = monstrous_nation
+			}
+		}
+		effect = {
+			country_event = {
+				id =  kas_mission_event.13
+			}
+		}
+	}
+}
+
+KAS_KOBILDZAN_MiddleRight = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = Z38
+	}
+	has_country_shield = yes
+
+	KAS_Military_Reforms = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {KAS_mission_levy_clans}
+		position = 2
+		trigger = {
+			mil_tech = 7
+			mil_power = 200
+			army_professionalism = 0.20
+			OR = {
+				commandant = 3
+				army_reformer = 3
+			}
+		}
+		effect = {
+			add_mil_power = -200
+			country_event = {
+				id = kas_mission_event.11
+			}
+		}
+	}
+
+	KAS_Eastern_Frontier = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_mission_defy_tallfolk
+		}
+		position = 3
+		provinces_to_highlight = {
+			area = westmoor_proper_area
+			area = moorhills_area
+			area = beronmoor_area
+		}
+		trigger = {
+			westmoor_proper_area = {
+				type = all
+				owned_by = ROOT
+			}
+			moorhills_area = {
+				type = all
+				owned_by = ROOT
+			}
+			beronmoor_area = {
+				type = all
+				owned_by = ROOT
+			}
+			NOT = {
+				exists = A24
+			}
+		}
+		effect = {
+			westmoor_proper_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+			moorhills_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+			beronmoor_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+		}
+	}
+
+	KAS_Conquer_Westmoors = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Eastern_Frontier
+		}
+		position = 4
+		trigger = {
+			war_score_against = {
+				who = A13
+				value = 50
+			}
+			controls = 221
+		}
+		effect = {
+			custom_tooltip = KAS_Conquer_Westmoors.tooltip.completion
+			hidden_effect = {
+				alenic_frontier_region = {
+					is_core = A13
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	KAS_Skewer_Gawed = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Destroy_Eaglecrest
+			KAS_Conquer_Westmoors
+		}
+		position = 5
+		trigger = {
+			NOT = {
+				exists = A13
+			}
+			calc_true_if = {
+				any_owned_province = {
+					region = alenic_frontier_region
+				}
+				amount = 20
+			}
+			NOT = {
+				any_owned_province = {
+					region = alenic_frontier_region
+					local_autonomy = 25
+					unrest = 0
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_Dummy_Kobildzan_Mission_Icon.completion.tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_core =  A13
+					}
+					remove_core =  A13
+				}
+			}
+			west_chillsbay_area = {
+				add_permanent_claim = ROOT
+			}
+			dinesck_area = {
+				add_permanent_claim = ROOT
+			}
+			northern_greatwoods_area = {
+				add_permanent_claim = ROOT
+			}
+			serpentshead_area = {
+				add_permanent_claim = ROOT
+			}
+			mawriver_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	KAS_Control_Plateau = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Skewer_Gawed
+		}
+		position = 6
+		provinces_to_highlight = {
+			area = west_chillsbay_area
+			area = dinesck_area
+			area = northern_greatwoods_area 
+			area = serpentshead_area
+			area = mawriver_area
+		}
+		trigger = {
+			west_chillsbay_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			dinesck_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			northern_greatwoods_area  = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			serpentshead_area= {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			mawriver_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = KAS_Mastery_Alen
+				duration = 7300
+			}
+			221 = {
+				change_culture = ROOT
+				add_base_tax = 2
+				add_base_manpower = 4
+				add_province_modifier = {
+					name = KAS_Alenic_Capital
+					duration = -1
+				}
+			}
+		}
+	}
+}

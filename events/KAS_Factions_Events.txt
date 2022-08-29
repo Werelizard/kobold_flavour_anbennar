@@ -1,0 +1,295 @@
+namespace = kas_factions_event
+
+#Ruler selection event for Kobold Monarchy on previous monarch death.
+country_event = {
+	id = kas_factions_event.1
+	title = kas_factions_event.1.title
+	desc = kas_factions_event.1.desc
+	picture = CAVE_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = KAS_Kobildzan_reform
+	}
+
+	#Choose the Redscale candidate
+	option = {
+		name = kas.factions_event.1.a
+        ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				faction_in_power = faction_redscales
+			}
+		}
+		# Faction influence handler
+		custom_tooltip = KAS_election_faction_influence.tooltip
+		hidden_effect = {
+			add_faction_influence ={
+				faction = faction_redscales
+				influence = 10
+			}
+			add_faction_influence ={
+				faction = faction_greenscales
+				influence = -5
+			}
+			add_faction_influence ={
+				faction = faction_bluescales
+				influence = -5
+			}
+		}
+		#If re-electing from the same faction, spawn rebels and new ruler has bad claim
+		if = {
+			limit = {
+				faction_in_power = faction_redscales
+			}
+			custom_tooltip = kas_factions_event.1.rebellion.tooltip
+			hidden_effect = {
+				random_owned_province = {
+					spawn_rebels = {
+						size = 2
+						type = noble_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 1
+						type = noble_rebels
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_in_power = faction_redscales
+			}
+			custom_tooltip = KAS.selectedRedscaleRuler.tooltip
+			hidden_effect = {
+				define_ruler = {
+					culture = redscale_kobold
+					max_random_adm = 4
+					max_random_dip = 4
+					change_mil = 3
+					claim = 50
+				}
+				set_country_flag = KAS_picked_redscale_ruler
+			}
+		}
+		#If elect from new faction
+		if = {
+			custom_tooltip = KAS.selectedRedscaleRuler.tooltip
+			limit = {
+				NOT = {
+					faction_in_power = faction_redscales
+				}
+			}
+			hidden_effect = {
+				define_ruler = {
+					culture = redscale_kobold
+					max_random_adm = 4
+					max_random_dip = 4
+					change_mil = 3
+					claim = 100
+				}
+				set_country_flag = KAS_picked_redscale_ruler
+			}
+		}
+	}
+
+	#Choose the Greenscale candidate
+	option = {
+		name = kas.factions_event.1.b
+        ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				faction_in_power = faction_greenscales
+			}
+		}
+		# Faction influence handler
+		custom_tooltip = KAS_election_faction_influence.tooltip
+		hidden_effect = {
+			add_faction_influence ={
+				faction = faction_redscales
+				influence = -5
+			}
+			add_faction_influence ={
+				faction = faction_greenscales
+				influence = 10
+			}
+			add_faction_influence ={
+				faction = faction_bluescales
+				influence = -5
+			}
+		}
+		#If re-electing from the same faction, spawn rebels and new ruler has bad claim
+		if = {
+			limit = {
+				faction_in_power = faction_greenscales
+			}
+			custom_tooltip = kas_factions_event.1.rebellion.tooltip
+			hidden_effect = {
+				random_owned_province = {
+					spawn_rebels = {
+						size = 2
+						type = noble_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 1
+						type = noble_rebels
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_in_power = faction_greenscales
+			}
+			custom_tooltip = KAS.selectedGreenscaleRuler.tooltip
+			hidden_effect = {
+				define_ruler = {
+					culture = greenscale_kobold
+					max_random_mil = 4
+					max_random_adm = 4
+					change_dip = 3
+					claim = 50
+				}
+				set_country_flag = KAS_picked_redscale_ruler
+			}
+		}
+		#If elect from new faction
+		if = {
+			custom_tooltip = KAS.selectedGreenscaleRuler.tooltip
+			limit = {
+				NOT = {
+					faction_in_power = faction_greenscales
+				}
+			}
+			hidden_effect = {
+				define_ruler = {
+					culture = greenscale_kobold
+					max_random_mil = 4
+					max_random_adm = 4
+					change_dip = 3
+					claim = 100
+				}
+				set_country_flag = KAS_picked_greenscale_ruler
+			}
+		}
+	}
+
+	#Choose the Bluescale candidate
+	option = {
+		name = kas.factions_event.1.c
+        ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				faction_in_power = faction_bluescales
+			}
+		}
+		# Faction influence handler
+		custom_tooltip = KAS_election_faction_influence.tooltip
+		hidden_effect = {
+			add_faction_influence ={
+				faction = faction_redscales
+				influence = -5
+			}
+			add_faction_influence ={
+				faction = faction_greenscales
+				influence = -5
+			}
+			add_faction_influence ={
+				faction = faction_bluescales
+				influence = 10
+			}
+		}
+		#If re-electing from the same faction, spawn rebels and new ruler has bad claim
+		if = {
+			limit = {
+				faction_in_power = faction_bluescales
+			}
+			custom_tooltip = kas_factions_event.1.rebellion.tooltip
+			hidden_effect = {
+				random_owned_province = {
+					spawn_rebels = {
+						size = 2
+						type = noble_rebels
+					}
+				}
+				random_owned_province = {
+					spawn_rebels = {
+						size = 1
+						type = noble_rebels
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				faction_in_power = faction_bluescales
+			}
+			custom_tooltip = KAS.selectedBluescaleRuler.tooltip
+			hidden_effect = {
+				define_ruler = {
+					culture = bluescale_kobold
+					max_random_mil = 4
+					max_random_dip = 4
+					change_adm = 3
+					claim = 50
+				}
+				set_country_flag = KAS_picked_redscale_ruler
+			}
+		}
+		#If elect from new faction
+		if = {
+			custom_tooltip = KAS.selectedBluescaleRuler.tooltip
+			limit = {
+				NOT = {
+					faction_in_power = faction_bluescales
+				}
+			}
+			hidden_effect = {
+				define_ruler = {
+					culture = bluescale_kobold
+					max_random_mil = 4
+					max_random_dip = 4
+					change_adm = 3
+					claim = 100
+				}
+				set_country_flag = KAS_picked_bluescale_ruler
+			}
+		}
+	}
+
+	#Add points and clear flags
+
+	# after = {
+	# 	if = {
+	# 		limit = {
+	# 			has_country_flag = KAS_picked_redscale_ruler
+	# 		}
+	# 		change_mil = 3
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_country_flag = KAS_picked_greenscale_ruler
+	# 		}
+	# 		change_dip = 3
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_country_flag = KAS_picked_bluescale_ruler
+	# 		}
+	# 		change_adm = 3
+	# 	}
+	# 	clr_country_flag = KAS_picked_redscale_ruler
+	# 	clr_country_flag = KAS_picked_greenscale_ruler
+	# 	clr_country_flag = KAS_picked_bluescale_ruler
+	# }
+}
+
+

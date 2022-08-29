@@ -1,0 +1,1688 @@
+################################
+# DRAGONCOAST GENERAL MISSIONS #
+################################
+
+KAS_Kob_Left = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+	}
+
+	#Is wining a war against the gnomes or Nimscod doesn't exist
+	KAS_mission_gnomic_scourge = {
+		required_missions = { }
+		position = 1
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			OR = {
+				war_score_against = {
+					who = A06
+					value = 25
+				}
+				NOT = {
+					exists = A06
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_mission_gnomic_scourge.completion.tooltip
+			hidden_effect = {
+				every_province = {
+					limit = {
+						culture = cliff_gnome
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				every_province = {
+					limit = {
+						is_core = A19
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	#Obliterate NImscodd
+	KAS_destroy_nimscodd = {
+		required_missions = {
+			KAS_mission_gnomic_scourge
+		}
+		position = 2
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			province_id = 169
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = A06
+					}
+					owns = 169
+				}
+				AND = {
+					controls = 169
+					war_score_against = {
+						who = A06
+						value = 99
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kas_mission_event.5
+			}
+		}
+	}
+
+	#BuildDefenses Gnomes
+	KAS_control_pass = {
+		required_missions = {}
+		position = 3
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			area = gnomish_pass_area
+			NOT = {
+				province_id = 144
+			}
+		}
+
+		trigger = {
+			owns_all_provinces = {
+				area = gnomish_pass_area
+				NOT = {
+					province_id = 144
+				}
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					area = gnomish_pass_area
+				}
+				add_province_modifier = {
+					name = KAS_Pass_Dens
+					duration = 5475
+				}
+			}
+		}
+	}
+
+	#COnnect Coast
+	KAS_connect_coast = {
+		required_missions = {}
+		position = 4
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			area = westmoor_proper_area
+		}
+
+		trigger = {
+			owns_all_provinces = {
+				area = westmoor_proper_area
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					area = westmoor_proper_area
+				}
+				add_province_modifier = {
+					name = KAS_Pass_Dens
+					duration = 5475
+				}
+			}
+		}
+	}
+
+	#Start colonising
+	KAS_Beyond_approach = {
+		required_missions = {}
+		position = 5
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			OR = {
+				num_of_light_ship = 30
+				num_of_heavy_ship = 10
+			}
+			navy_size_percentage = 1
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = KAS_beyond_the_approach_reward
+				duration = 3650
+			}
+			define_explorer = {
+				female = yes
+				shock = 1
+				fire = 0
+				manuever = 4
+				siege = 1
+			}
+		}
+	}
+
+	#Discover Aelantir
+	KAS_discover_new_hoard = {
+		required_missions = {
+			KAS_Beyond_approach
+		}
+		position = 6
+	    icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			OR = {
+				num_of_colonists = 1
+				has_institution = new_world_i
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_discover_new_hoard.discover.alentir
+				OR = {
+					colonial_endralliande = {
+						has_discovered = ROOT
+					}
+					colonial_dalaire = {
+						has_discovered = ROOT
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = KAS_discover_new_hoard_reward
+				duration = 5475
+			}
+		}
+	}
+
+	# KAS_discover_new_hoard = {
+	# 	required_missions = {KAS_Beyond_approach}
+	# 	position = 6
+	# 	icon = KAS_Dummy_Mission_Icon
+
+	# 	trigger = {
+	# 		num_of_colonists = 1
+	# 		custom_trigger_tooltip = {
+	# 			tooltip = KAS_discover_new_hoard.discover.alentir
+	# 			OR = {
+	# 				colonial_edralliande = { has_discovered = ROOT }
+	# 			}
+	# 			OR = {
+	# 				colonial_noruin = { has_discovered = ROOT }
+	# 			}
+	# 			OR = {
+	# 				colonial_dalaire = {has_discovered = ROOT }
+	# 			}
+	# 		}
+	# 	}
+
+	# 	effect = {
+	# 		add_country_modifier = {
+	# 			name = KAS_discover_new_hoard_reward
+	# 			duration = 7300
+	# 		}
+	# 	}
+	# }
+}
+
+KAS_Kob_MiddleLeft = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+	}
+
+	#Rival or ally all other Kobold clans
+	KAS_mission_clan_diplomacy = {
+		required_missions = { }
+		position = 1
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A26
+						}
+						exists = A26
+					}
+				}
+				OR = {
+					AND = {
+						alliance_with = A26
+						reverse_has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					is_rival = A26
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A27
+						}
+						exists = A27
+					}
+				}
+				OR = {
+					AND = {
+						alliance_with = A27
+						reverse_has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					is_rival = A27
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A28
+						}
+						exists = A28
+					}
+				}
+				OR = {
+					AND = {
+						alliance_with = A28
+						reverse_has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					is_rival = A28
+				}
+			}
+
+			else = {
+				OR = {
+					tag = A26
+					NOT = {
+						exists = A26
+					}
+				}
+				OR = {
+					tag = A27
+					NOT = {
+						exists = A27
+					}
+				}
+				OR = {
+					tag = A28
+					NOT = {
+						exists = A28
+					}
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_mission_clan_diplomacy.completion.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						is_rival = A26
+					}
+					every_province = {
+						limit = {
+							is_core = A26
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						is_rival = A27
+					}
+					every_province = {
+						limit = {
+							is_core = A27
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						is_rival = A28
+					}
+					every_province = {
+						limit = {
+							is_core = A28
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A26
+					}
+					add_historical_friend = A26
+					A26 = {
+						add_historical_friend = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A27
+					}
+					add_historical_friend = A27
+					A27 = {
+						add_historical_friend = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A28
+					}
+					add_historical_friend = A28
+					A28 = {
+						add_historical_friend = ROOT
+					}
+				}
+				every_province = {
+					limit = {
+						owner = {
+							NOT = {
+								culture_group = kobold
+							}
+						}
+						NOT = {
+							is_core = ROOT
+						}
+						region = dragon_coast_region
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			
+		}
+	}
+
+	KAS_obliterate_portnamm = {
+		required_missions = {
+			KAS_mission_gnomic_scourge
+		}
+		position = 2
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			province_id = 126
+		}
+
+		trigger = {
+			OR = {
+				AND = {
+					NOT = {
+						exists = A19
+					}
+					OR = {
+						owns = 126
+						126 = {
+							owner = {
+								NOT = {
+									culture_group = gnomish
+								}
+							}
+						}
+					}
+				}
+				controls = 126
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_obliterate_portnamm.completion.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						controls = 126
+					}
+					country_event = {
+						id = kas_mission_event.5
+					}
+					if = {
+						limit = {
+							exists = A19
+						}
+						A19 = {
+							add_war_exhaustion = 10
+						}
+					}
+				}
+				else = {
+					add_prestige = 20
+				}
+			}
+		}
+	}
+
+	KAS_end_gnome_wars = {
+		required_missions = {
+			KAS_obliterate_portnamm
+			KAS_destroy_nimscodd
+		}
+		position = 3
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			culture = cliff_gnome
+			province_id = 126
+		}
+
+		trigger = {
+			OR = {
+				NOT = {
+					exists = A19
+				}
+				A19 = {
+					is_subject = yes
+				}
+			}
+			NOT = {
+				exists = A06
+			}
+			storm_isles_area = {
+				type = all
+				NOT = {
+					owner = {
+						culture_group = gnomish
+					}
+				}
+			}
+			nimscodd_area = {
+				type = all
+				NOT = {
+					owner = {
+						culture_group = gnomish
+					}
+				}
+			}
+			gnomish_pass_area ={
+				NOT = {
+					province_id = 144
+				}
+				type = all
+				NOT = {
+					owner = {
+						culture_group = gnomish
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kas_mission_event.8
+			}
+		}
+	}
+}
+
+KAS_Kob_Middle = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+	}
+
+	KAS_mission_religious_patronage = {
+		required_missions = { }
+		position = 1
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			AND = {
+				OR = {
+					stability = 1
+					treasury = 200
+				}
+				legitimacy_equivalent = 90
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_mission_religious_patronage.completion.tooltip
+			if = {
+				limit = {
+					treasury = 200
+					NOT = {
+						stability = 1
+					}
+				}
+				add_treasury = -200
+				add_country_modifier = {
+					name = KAS_mission_religious_patronage_reward
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					stability = 1
+					NOT = {
+						treasury = 200
+					}
+				}
+				add_country_modifier = {
+					name = KAS_mission_religious_patronage_reward_greater
+					duration = 1825
+				}
+			}
+			if = {
+				limit = {
+					treasury = 200
+					stability = 1
+				}
+				add_treasury = -200
+				add_country_modifier = {
+					name = KAS_mission_religious_patronage_reward_greatest
+					duration = 1825
+				}
+			}
+		}
+	}
+	
+	#Koboldwars
+	KAS_mission_kobold_unification = {
+		required_missions = {
+			KAS_mission_levy_clans
+			KAS_mission_clan_diplomacy
+			KAS_mission_religious_patronage
+		}
+
+		position = 2
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			NOT = {
+				is_at_war = yes
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A26
+						}
+						exists = A26
+					}
+				}
+				army_strength ={
+					who = A26
+					value = 1.01
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A27
+						}
+						exists = A27
+					}
+				}
+				army_strength ={
+					who = A27
+					value = 1.01
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A28
+						}
+						exists = A28
+					}
+				}	
+				army_strength ={
+					who = A28
+					value = 1.01
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A26
+						}
+						exists = A26
+					}
+				}
+				total_development = A26
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A27
+						}
+						exists = A27
+					}
+				}
+				total_development = A27
+			}
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A28
+						}
+						exists = A28
+					}
+				}
+				total_development = A28
+			}
+			else = {
+				owns_all_provinces = {
+						culture_group = kobold
+						region = dragon_coast_region
+					}
+				}
+			}
+
+			effect = {
+				custom_tooltip = KAS_mission_kobold_unification.tooltip.completion
+				if = {
+					limit = {
+						AND = {
+							NOT = {
+								tag = A28
+							}
+							exists = A28
+						}
+					}
+					A28 = {
+						country_event = {
+							id = kas_mission_event.2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							NOT = {
+								tag = A27
+							}
+							exists = A27
+						}
+					}
+					A27 = {
+						country_event = {
+							id = kas_mission_event.2
+						}
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							NOT = {
+								tag = A26
+							}
+							exists = A26
+						}
+					}
+					A26 = {
+						country_event = {
+							id = kas_mission_event.2
+						}
+					}
+				}
+			}
+	}
+
+	#Unify kobolds
+	KAS_Kobold_kingdom_formation = {
+		required_missions = {
+			KAS_mission_kobold_unification
+			KAS_end_gnome_wars 
+		}
+		position = 4
+		icon = KAS_Dummy_Mission_Icon
+
+		provinces_to_highlight = {
+			owner = {
+				culture_group = kobold
+			}
+			culture_group = kobold
+			superregion = western_cannor_superregion
+		}
+
+		trigger = {
+			has_institution = feudalism
+			OR = {
+				owns_all_provinces = {
+					superregion = western_cannor_superregion
+					culture_group = kobold
+				}
+			OR = {
+				AND = {
+					total_development = 200
+					government_rank = 2
+				}
+				is_great_power = yes
+			}
+			}
+			if = {
+				limit = {
+					tag = A26
+				}
+				OR = {
+					NOT = {
+						exists = A27
+					}
+					A27 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+				OR = {
+					NOT = {
+						exists = A28
+					}
+					A28 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = A27
+				}
+				OR = {
+					NOT = {
+						exists = A26
+					}
+					A26 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+				OR = {
+					NOT = {
+						exists = A28
+					}
+					A28 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = A28
+				}
+				OR = {
+					NOT = {
+						exists = A27
+					}
+					A27 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+				OR = {
+					NOT = {
+						exists = A26
+					}
+					A26 = {
+						is_subject_of = ROOT
+						NOT = {
+							liberty_desire = 10
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kas_mission_event.1
+			}
+			custom_tooltip = KAS_Kobold_kingdom_formation.completion.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						A26 = {
+							is_subject_of = ROOT
+						}
+					}
+					ROOT = {
+						inherit = A26
+					}
+				}
+				if = {
+					limit = {
+						A27 = {
+							is_subject_of = ROOT
+						}
+					}
+					ROOT = {
+						inherit = A27
+					}
+				}
+				if = {
+					limit = {
+						A28 = {
+							is_subject_of = ROOT
+						}
+					}
+					ROOT = {
+						inherit = A28
+					}
+				}
+			}
+		}
+	}
+}
+
+KAS_Kob_MiddleRight = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+	}
+
+	#Raise troops for war
+	KAS_mission_levy_clans = {
+		required_missions = { }
+		position = 1
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			OR = {
+				army_size_percentage = 1
+				AND = {
+					if = {
+						limit = {
+							AND = {
+								NOT = {
+									tag = A26
+								}
+								exists = A26
+							}
+						}
+						army_size = A26
+					}
+					if = {
+						limit = {
+							AND = {
+								NOT = {
+									tag = A27
+								}
+								exists = A27
+							}
+						}
+						army_size = A27
+					}
+					if = {
+						limit = {
+							AND = {
+								NOT = {
+									tag = A28
+								}
+								exists = A28
+							}
+						}
+						army_size = A28
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					KAS_largest_kobold_army_in_Dragoncoast = yes
+					}
+					create_general = { tradition = 100 } 
+				}
+			else = {
+				create_general = { tradition = 80 }
+			}
+		}
+	}
+}
+
+KAS_Kob_Right = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+	}
+
+	KAS_mission_show_strength = {
+		required_missions = {}
+		position = 1
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			any_neighbor_country = {
+				AND = {
+					NOT = {
+						culture_group = kobold
+					}
+					NOT = {
+						culture_group = gnomish
+					}
+				}
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = KAS_mission_show_strength.is_rival.tooltip
+						is_enemy = ROOT
+						OR = {
+							has_opinion_modifier = {
+								who = ROOT
+								modifier = scornfully_insulted
+							}
+						}
+					}
+					AND = {
+						war_with = ROOT
+						NOT = {
+							war_score_against = {
+								who = ROOT
+								value = -25
+							}
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = KAS_kobolds_defiant
+				duration = 3650
+			}
+		}
+	}
+
+	# KAS_mission_prepare_raids = {
+	# 	required_missions = { }
+	# 	position = 1
+	# 	icon = KAS_Dummy_Mission_Icon
+
+	# 	trigger = {
+	# 		calc_true_if = {
+	# 			any_neighbor_country = {
+	# 				NOT = {
+	# 					culture_group = kobold
+	# 				}
+	# 				has_spy_network_from = {
+	# 					who = ROOT
+	# 					value = 25
+	# 				}
+	# 			}
+	# 			amount = 2
+	# 		}
+	# 	}
+	# 	effect = {
+	# 		custom_tooltip = KAS_mission_prepare_raids.completion.tooltip
+	# 		hidden_effect = {
+	# 			every_neighbor_country = {
+	# 				limit = {
+	# 					NOT = {
+	# 						culture_group = kobold
+	# 					}
+	# 					has_spy_network_from = {
+	# 						who = ROOT
+	# 						value = 25
+	# 					}
+	# 				}
+	# 				add_spy_network_from = {
+	# 					who = ROOT
+	# 					value = -25
+	# 				}
+	# 				reverse_add_opinion = {
+	# 					who = ROOT
+	# 					modifier = raided_us
+	# 				}
+	# 				random_owned_province = {
+	# 					limit = {
+	# 						NOT = {
+	# 							culture_group = kobold
+	# 						}
+	# 					}
+	# 					add_base_tax = -1
+	# 					add_base_manpower = -1
+	# 				}
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				calc_true_if = {
+	# 					any_neighbor_country = {
+	# 						NOT = {
+	# 							culture_group = kobold
+	# 						}
+	# 						has_spy_network_from = {
+	# 							who = ROOT
+	# 							value = 25
+	# 						}
+	# 					}
+	# 					amount = 2
+	# 				}
+	# 				NOT = {
+	# 					calc_true_if = {
+	# 						any_neighbor_country = {
+	# 							NOT = {
+	# 								culture_group = kobold
+	# 							}
+	# 							has_spy_network_from = {
+	# 								who = ROOT
+	# 								value = 25
+	# 							}
+	# 						}
+	# 						amount = 3
+	# 					}
+	# 				}
+	# 			}
+	# 			add_years_of_income = 0.5
+	# 			add_yearly_manpower = -0.1
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				calc_true_if = {
+	# 					any_neighbor_country = {
+	# 						NOT = {
+	# 							culture_group = kobold
+	# 						}
+	# 						has_spy_network_from = {
+	# 							who = ROOT
+	# 							value = 25
+	# 						}
+	# 					}
+	# 					amount = 3
+	# 				}
+	# 				NOT = {
+	# 					calc_true_if = {
+	# 						any_neighbor_country = {
+	# 							NOT = {
+	# 								culture_group = kobold
+	# 							}
+	# 							has_spy_network_from = {
+	# 								who = ROOT
+	# 								value = 25
+	# 							}
+	# 						}
+	# 						amount = 4
+	# 					}
+	# 				}
+	# 			}
+	# 			add_years_of_income = 1.5
+	# 			add_yearly_manpower = -0.1
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				calc_true_if = {
+	# 					any_neighbor_country = {
+	# 						NOT = {
+	# 							culture_group = kobold
+	# 						}
+	# 						has_spy_network_from = {
+	# 							who = ROOT
+	# 							value = 25
+	# 						}
+	# 					}
+	# 					amount = 4
+	# 				}
+	# 			}
+	# 			add_years_of_income = 2.5
+	# 			add_yearly_manpower = -0.1
+	# 		}
+	# 	}
+	# }
+
+	KAS_mission_defy_tallfolk = {
+		required_missions = {
+			KAS_mission_show_strength
+			KAS_mission_levy_clans
+		}
+		position = 2
+		icon = KAS_Dummy_Mission_Icon
+
+		trigger = {
+			OR = {
+				is_in_war = {
+					attacker_leader = ROOT
+				}
+				is_in_war = {
+					defender_leader = ROOT
+				}
+			}
+			any_known_country = {
+				war_with = ROOT
+				AND = {
+					NOT = {
+						culture_group = kobold
+					}
+					NOT = {
+						culture_group = gnomish
+					}
+				}
+				OR = {
+					tag = A01
+					tag = A13
+					army_strength = {
+						who = ROOT
+						value = 1.5
+					}
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_mission_defy_tallfolk.completion.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						is_in_war = {
+							attacker_leader = ROOT
+						}
+					}
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 25
+					}
+					add_prestige = 20
+					define_ruler_to_general = {
+						fire = 2
+						shock = 6
+						manuever = 2
+						siege = 4
+						trait = inspirational_leader_general_personality
+					}
+				}
+				if = {
+					limit = {
+						is_in_war = {
+							defender_leader = ROOT
+							}
+					}
+					add_ruler_modifier  = {
+						name = KAS_defy_tallfolk
+						duration = -1
+					}
+					define_ruler_to_general = {
+						fire = 2
+						shock = 4
+						manuever = 6
+						siege = 2
+						trait = goal_oriented_personality
+					}
+				}
+			}
+		}
+	}
+}
+
+########################################
+# BRANCHING MISSIONS - Gnomish MAtters #
+########################################
+
+KAS_Kobold_Gnome_Undecided = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		NOT = {has_country_flag = KAS_Gnome_War_Gnome_Friends}
+		NOT = {has_country_flag = KAS_Gnome_War_No_Conciliation}
+	}
+	has_country_shield = yes
+
+	KAS_Gnome_Undecided_1 = {
+		icon = mission_unknown_mission
+		required_missions = {
+			KAS_end_gnome_wars 
+		}
+		position = 4
+		trigger = {
+			always = no
+		}
+		effect = {
+
+		}
+	}
+
+	KAS_Gnome_Undecided_2 = {
+		icon = mission_unknown_mission
+		required_missions = {
+			KAS_Gnome_Undecided_1
+		}
+		position = 5
+		trigger = {
+			always = no
+		}
+		effect = {
+
+		}
+	}
+
+	KAS_Gnome_Undecided_3 = {
+		icon = mission_unknown_mission
+		required_missions = {
+			KAS_Gnome_Undecided_2
+		}
+		position = 5
+		trigger = {
+			always = no
+		}
+		effect = {
+
+		}
+	}
+}
+
+KAS_Kobold_Gnome_Friendship = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		NOT = {has_country_flag = KAS_Gnome_War_No_Conciliation}
+		has_country_flag = KAS_Gnome_War_Gnome_Friends
+	}
+	has_country_shield = yes
+
+	#Make ammends for the damage brought upon in the war
+	KAS_Rebuild_Nimscod = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = {
+			KAS_end_gnome_wars 
+		}
+		position = 4
+		trigger = {
+			high_tolerance_gnomish_race_trigger = yes
+			NOT = {
+				any_owned_province = {
+					culture_group = gnomish
+					unrest = 0.1
+					devastation = 1
+				}
+			}
+			169 = {
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+				num_of_times_improved = 6
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = yes
+				}
+				add_gnomish_minority_size_effect = yes
+			}
+			169 = {
+				add_kobold_minority_size_effect = yes
+			}
+			if = {
+				limit = {
+					exists = A06
+				}
+				A06 = {
+					large_increase_of_kobold_tolerance_effect = yes
+					add_opinion = {
+						who = ROOT
+						modifier = KAS_restored_bonds
+					}
+				}
+				add_opinion = {
+					who = A06
+					modifier = KAS_restored_bonds
+				}
+			}
+			define_advisor = {
+				type = natural_scientist
+				culture = cliff_gnome
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+
+	#Sponsor Science
+	KAS_Artificery_Patronage = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = {
+			KAS_Rebuild_Nimscod
+		}
+		position = 5
+		trigger = {
+			has_institution = printing_press
+			has_estate = estate_artificers
+			num_of_estate_privileges = {
+				estate = estate_artificers
+				value = 2
+			}
+			OR = {
+				estate_influence = {
+					estate = estate_artificers
+					influence = 60
+				}
+				estate_loyalty = {
+					estate = estate_artificers
+					loyalty = 60
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = KAS_Cooperative_Research
+				duration = -1
+			}
+		}
+	}
+
+	#The Great Academy
+	KAS_Grand_Academy = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = {
+			KAS_Artificery_Patronage
+		}
+		position = 6
+		trigger = {
+			treasury = 4000
+			if = {
+				limit = {
+					NOT = {
+						169 = {
+							is_capital = yes
+						}
+					}
+				}
+				any_owned_province = {
+					is_capital = yes
+					has_building = university
+					development = 40
+				}
+				169 = {
+					is_capital = yes
+					has_building = university
+					development = 40
+				}
+			}
+			else = {
+				any_owned_province = {
+					is_capital = yes
+					has_building = university
+					development = 45
+					has_integrated_gnomish_pop_trigger = yes
+				}
+			}
+		}
+		effect = {
+			add_treasury = -4000
+			custom_tooltip = KAS_Grand_Academy.completion.tooltip
+			hidden_effect = {
+				random_list = {
+					25 = {
+						country_event = {
+							id = kas_research_event.1
+						}
+					}
+					25 = {
+						country_event = {
+							id = kas_research_event.2
+						}
+					}
+					25 = {
+						country_event = {
+							id = kas_research_event.3
+						}
+					}
+					25 = {
+						country_event = {
+							id = kas_research_event.4
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+KAS_Kobold_Gnome_Antagonism = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		NOT = {has_country_flag = KAS_Gnome_War_Gnome_Friends}
+		has_country_flag = KAS_Gnome_War_No_Conciliation
+	}
+	has_country_shield = yes
+
+	KAS_Kobold_Supremacy = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = { 
+			KAS_end_gnome_wars
+		}
+		position = 4
+		trigger = {
+			NOT = {
+				is_at_war = yes
+			}
+			NOT = {
+				any_owned_province = {
+					culture = cliff_gnome
+					local_autonomy = 25
+				}	
+			}
+			nimscodd_area = {
+				type = all
+				is_core = ROOT
+				controlled_by = ROOT
+			}
+		}
+		effect = {
+			large_decrease_of_gnomish_tolerance_effect = yes
+			custom_tooltip = KAS_Kobold_Supremacy.completion.tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						NOT = {
+							province_id = 169
+						}
+						culture = cliff_gnome
+					}
+					change_culture = ROOT
+					change_religion = ROOT
+					random_list = {
+						60 = {
+
+						}
+						40 = {
+							spawn_rebels = {
+								type = nationalist_rebels
+								separatists_target = A06
+								size = 1
+							}
+						}
+					}
+				}
+				169 = {
+					spawn_rebels = {
+						type = nationalist_rebels
+						separatists_target = A06
+						size = 2
+					}
+				}
+			}
+		}
+	}
+
+	KAS_Crack_Code = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = {		
+			KAS_Kobold_Supremacy 
+		}
+		position = 5
+		trigger = {
+			has_institution = printing_press
+			has_estate = estate_artificers
+			num_of_estate_privileges = {
+				estate = estate_artificers
+				value = 2
+			}
+			OR = {
+				estate_influence = {
+					estate = estate_artificers
+					influence = 60
+				}
+				estate_loyalty = {
+					estate = estate_artificers
+					loyalty = 60
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_Crack_Code.completion.tooltip
+			hidden_effect = {
+				country_event = {
+					id = kas_research_event.6
+					days = 300
+				}
+			}
+		}
+	}
+
+	KAS_Koobold_Artificery = {
+		icon = KAS_Dummy_Mission_Icon
+		required_missions = {
+			KAS_Crack_Code 
+		}
+		position = 6
+		trigger = {
+			innovativeness = 50
+			natural_scientist = 3
+			any_owned_province = {
+				development = 35
+				has_building = university
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Koobold_Artificery.code_cracked.tooltip
+				has_country_flag = KAS_Cracked_Code
+			}
+		}
+		effect = {
+			country_event = {
+				id = kas_research_event.100
+			}
+			add_country_modifier = {
+				name = KAS_Kobold_artificery
+				duration = -1
+			}
+		}
+	}
+}

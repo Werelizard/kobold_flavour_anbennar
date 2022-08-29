@@ -1,0 +1,514 @@
+#######################################
+#Kobold cults for non-kobold religions#
+#######################################
+
+#Dragon cult for non-kobold nations
+KAS_Kobold_Dragon_Cult = {
+	province_warscore_cost = -0.1
+    unjustified_demands = -0.25
+
+	allow = {
+		OR = {
+            any_owned_province = {
+                OR = {
+                    culture_group = kobold
+                    religion_group = dragon_cult
+                }
+            }
+            any_country = {
+                alliance_with = ROOT
+                religion_group = dragon_cult
+            }
+		}
+		NOT = {
+            religion = kobold_dragon_cult
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 2
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 2
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 2
+        }
+	}
+}
+
+###################################
+#Kobold cults for kobold religions#
+###################################
+
+####TIER 0####
+
+#Kobold fire cult (Tier 0)
+KAS_Kobold_Fire_Cult_0 = {
+	core_creation = -0.1
+    global_unrest = 1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 0
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 2
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 2
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 2
+        }
+        modifier = {
+            personality = ai_diplomat
+            factor = 0.5
+        }
+	}
+}
+
+#Kobold heart cult (tier 0)
+KAS_Kobold_Heart_Cult_0 = {
+	global_missionary_strength = -0.01
+    global_unrest = -1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 0
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 0.5
+		}
+        modifier = {
+            NOT = {
+                religious_unity = 0.75
+            }
+            factor = 1.5
+        }
+        modifier = {
+            average_unrest = 1
+            factor = 2
+        }
+	}
+}
+
+#Kobold wisdom cult (tier 0)
+KAS_Kobold_Heart_Cult_0 = {
+	all_estate_loyalty_equilibrium = 0.05
+    advisor_pool = 1
+    manpower_in_true_faith_provinces= -0.15
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 0
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_bankrupt = yes
+            factor = 0
+		}
+		modifier = {
+			NOT = {
+                is_at_war = yes
+            }
+			factor = 0
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 0.25
+        }
+        modifier = {
+            is_in_deficit = yes
+            factor = 0.5
+        }
+        modifier = {
+            any_neighbor_country = {
+	            tech_difference = 1
+            } 
+            factor = 1.25
+        }
+	}
+}
+
+####TIER 1####
+
+#Kobold fire cult (Tier 1)
+KAS_Kobold_Fire_Cult_0 = {
+	core_creation = -0.1
+    ae_impact = -0.1
+    global_unrest = 1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 1
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 2
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 2
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 2
+        }
+        modifier = {
+            personality = ai_diplomat
+            factor = 0.5
+        }
+	}
+}
+
+#Kobold heart cult (tier 1)
+KAS_Kobold_Heart_Cult_0 = {
+	global_missionary_strength = -0.01
+    religious_unity = 0.025
+    global_unrest = -1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 1
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 0.5
+		}
+        modifier = {
+            NOT = {
+                religious_unity = 0.75
+            }
+            factor = 1.5
+        }
+        modifier = {
+            average_unrest = 1
+            factor = 2
+        }
+	}
+}
+
+#Kobold wisdom cult (tier 1)
+KAS_Kobold_Heart_Cult_0 = {
+	all_estate_loyalty_equilibrium = 0.05
+    advisor_cost = -0.1
+    manpower_in_true_faith_provinces= -0.15
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 1
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_bankrupt = yes
+            factor = 0
+		}
+		modifier = {
+			NOT = {
+                is_at_war = yes
+            }
+			factor = 0
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 0.25
+        }
+        modifier = {
+            is_in_deficit = yes
+            factor = 0.5
+        }
+        modifier = {
+            any_neighbor_country = {
+	            tech_difference = 1
+            } 
+            factor = 1.25
+        }
+	}
+}
+
+####TIER 2####
+
+#Kobold fire cult (Tier 2)
+KAS_Kobold_Fire_Cult_0 = {
+	core_creation = -0.1
+    ae_impact = -0.15
+    warscore_cost_vs_other_religion = -0.25 
+    global_unrest = 1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 2
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 2
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 2
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 2
+        }
+        modifier = {
+            personality = ai_diplomat
+            factor = 0.5
+        }
+	}
+}
+
+#Kobold heart cult (tier 2)
+KAS_Kobold_Heart_Cult_0 = {
+	global_missionary_strength = -0.01
+    religious_unity = 0.05
+    global_unrest = -1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 2
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 0.5
+		}
+        modifier = {
+            NOT = {
+                religious_unity = 0.75
+            }
+            factor = 1.5
+        }
+        modifier = {
+            average_unrest = 1
+            factor = 2
+        }
+	}
+}
+
+#Kobold wisdom cult (tier 2)
+KAS_Kobold_Heart_Cult_0 = {
+	all_estate_loyalty_equilibrium = 0.05
+    advisor_cost = -0.15
+    tolerance_own = 1
+    manpower_in_true_faith_provinces= -0.1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 2
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_bankrupt = yes
+            factor = 0
+		}
+		modifier = {
+			NOT = {
+                is_at_war = yes
+            }
+			factor = 0
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 0.25
+        }
+        modifier = {
+            is_in_deficit = yes
+            factor = 0.5
+        }
+        modifier = {
+            any_neighbor_country = {
+	            tech_difference = 1
+            } 
+            factor = 1.25
+        }
+	}
+}
+
+####TIER 3####
+
+#Kobold fire cult (Tier 3)
+KAS_Kobold_Fire_Cult_0 = {
+	core_creation = -0.15
+    ae_impact = -0.15
+    warscore_cost_vs_other_religion = -0.40 
+    global_unrest = 1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 3
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 2
+		}
+		modifier = {
+			at_war_with_religious_enemy = yes
+			factor = 2
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 2
+        }
+        modifier = {
+            personality = ai_diplomat
+            factor = 0.5
+        }
+	}
+}
+
+#Kobold heart cult (tier 3)
+KAS_Kobold_Heart_Cult_0 = {
+	global_missionary_strength = -0.01
+    religious_unity = 0.075
+    global_unrest = -2
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 3
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_at_war = yes
+            factor = 0.5
+		}
+        modifier = {
+            NOT = {
+                religious_unity = 0.75
+            }
+            factor = 1.5
+        }
+        modifier = {
+            average_unrest = 1
+            factor = 2
+        }
+	}
+}
+
+#Kobold wisdom cult (tier 3)
+KAS_Kobold_Heart_Cult_0 = {
+	all_estate_loyalty_equilibrium = 0.1
+    advisor_cost = -0.2
+    tolerance_own = 1
+    manpower_in_true_faith_provinces= -0.1
+
+	allow = {
+        religion = kobold_dragon_cult
+        has_great_project = {
+	        type = KAS_Kobold_Hoard
+	        tier = 3
+        }
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			is_bankrupt = yes
+            factor = 0
+		}
+		modifier = {
+			NOT = {
+                is_at_war = yes
+            }
+			factor = 0
+		}
+        modifier = {
+            personality = ai_militarist
+            factor = 0.25
+        }
+        modifier = {
+            is_in_deficit = yes
+            factor = 0.5
+        }
+        modifier = {
+            any_neighbor_country = {
+	            tech_difference = 1
+            } 
+            factor = 1.25
+        }
+	}
+}

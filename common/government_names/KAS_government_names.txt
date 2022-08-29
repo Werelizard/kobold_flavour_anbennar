@@ -1,0 +1,23 @@
+kobildzan_republic = { 
+	rank = {
+		1 = VIRAXIA
+		2 = VIRAXIA
+		3 = VIRAXIA
+	}
+	
+	ruler_male = {
+		1 = VIRAX
+		2 = VIRAX
+		3 = VIRAX
+	}
+	
+	ruler_female = {
+		1 = VIRAX
+		2 = VIRAX
+		3 = VIRAX
+	}
+
+	trigger = {
+		has_reform = KAS_Kobildzan_reform
+	}
+}

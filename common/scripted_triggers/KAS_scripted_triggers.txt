@@ -1,0 +1,83 @@
+KAS_largest_kobold_army_in_Dragoncoast = {
+	if = {
+		limit = {
+			tag = A26
+		}
+		army_size = A27
+		army_size = A28
+	}
+	if = {
+		limit = {
+			tag = A27
+		}
+		army_size = A26
+		army_size = A28
+	}
+	if = {
+		limit = {
+			tag = A28
+		}
+		army_size = A27
+		army_size = A26
+	}
+}
+
+KAS_iskobold_accepts_kobold = {
+	OR = {
+		AND = {
+			owner = {
+				culture_group = kobold
+			}
+			culture_group = kobold
+		}
+		AND= {
+			owner = {
+				accepted_culture = bluescale_kobold
+			}
+			culture = bluescale_kobold
+		}
+		AND = {
+			owner = {
+				accepted_culture = redscale_kobold
+			}
+			culture = redscale_kobold
+		}
+		AND = {
+			owner = {
+				accepted_culture = greenscale_kobold
+			}
+			culture = greenscale_kobold
+		}
+		AND = {
+			owner = {
+				accepted_culture = kobildzani_kobold
+			}
+			culture = kobildzani_kobold
+		}
+		AND = {
+			owner = {
+				accepted_culture = syzirzexi_kobold
+			}
+			culture = syzirzexi_kobold
+		}
+	}
+}
+
+KAS_has_kobold_religion_or_harmonised = {
+	religion = kobold_dragon_cult
+	OR = {
+		AND = {
+			owner = {
+				has_harmonized_with = dragon_cult
+				KAS_iskobold_accepts_kobold = yes
+			}
+		}
+		AND = {
+			owner = {
+				secondary_religion = kobold_dragon_cult
+				KAS_iskobold_accepts_kobold = yes
+			}
+		}
+		religion = kobold_dragon_cult
+	}
+}

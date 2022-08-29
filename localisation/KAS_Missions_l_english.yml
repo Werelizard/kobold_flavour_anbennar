@@ -1,0 +1,132 @@
+﻿l_english:
+ KAS_mission_gnomic_scourge_title:0 "The Gnomish Scourge"
+ KAS_mission_gnomic_scourge_desc:0 "The Dragonwake saw us triumph over the Gnomes. The coast is ours, and we cannot abet the existence of this thorn in our side any longer. It is high time that we strike at their island and properly neutralise the threat - once and for all."
+ KAS_mission_gnomic_scourge.completion.tooltip:0 "We will gain a permanent claim on every Cliff Gnome culture province on the Dragon Coast.\n"
+
+ KAS_mission_clan_diplomacy_title:0 "Clan Diplomacy"
+ KAS_mission_clan_diplomacy_desc:0 "Following the Dragonwake, our people shattered like waves against the jagged coast. Some of us were lost entirely, but the majority of our people shattered, Zendia against Zendia, Trivuak against Triuvak. And as the ocean around us swells, we must gather our folk to face the coming storm, be it by diplomacy...or by force."
+ KAS_mission_clan_diplomacy.completion.tooltip:0 "We will gain §Opermanent claims§! on all provinces belonging to rival Kobold clans and Kobold provinces on the Dragon Coast not owned by Kobold nations.\n\nAlternatively, we will become §Thistorical friends§! with every Kobold nation on the Dragon Coast that we have allied and have high enough relations with."
+
+ KAS_mission_levy_clans_title:0 "Levy the Clan-Kin"
+ KAS_mission_levy_clans_desc:0 "We must brace ourselves for the inevitable war between our clan and the others; while we may be able to sway some one of the other clans, inevitably conflict will arise - and if not against other Kobolds, then against the tall-folk. We must be ready."
+ KAS_largest_kobold_army_in_Dragoncoast:0 "Have a larger army than any other Kobold Clan."
+
+ KAS_mission_religious_patronage_title:0 "Dragonic Patronage"
+ KAS_mission_religious_patronage_desc:0 "The Dragon Coast is dotted with numerous small shrines devoted to our glorious Dragonic ancestors. We must attend to those prior to any outside consideration: after all, what is a [Root.Monarch.GetTitle] if not the foremost devotee among [Root.Monarch.GetHerHis] people?"
+ KAS_mission_religious_patronage.completion.tooltip:0 "The reward will be greater if we have both §Thigh stability§! as well as the §Tcrowns to spare§!, granting us additional tolerance of the true faith and stability cost modifier discout.\n\nProviding ¤ §Ycrowns§! alone will reward us with a tolerance of the true faith bonus whilst having §Yhigher stability§! will give us a long-term discount to raising our stability. Having both will grant us a combination of the two."
+
+ KAS_mission_prepare_raids_title:0 "Prepare Raiding Parties"
+ KAS_mission_prepare_raids_desc:0 "We must gather able-bodied men and cunning spies and have them prepare parties with the goal to raid nearby tall-folk - gnomes included. Their gold, their shiny trinkets - all will be ours."
+ KAS_mission_prepare_raids.completion.tooltip:0 "The more non-kobold nations we've embedded spies into, the greater the loot we will acquire! For up to four non-kobold nations that we have a spy network of §Y25§! or more in, we will gain additional ¤ §Ycrowns§!. We will however lose some £icon_manpower£ §Ymanpower§! in the process.\n"
+
+ KAS_mission_kobold_unification_title:0 "The Kin War"
+ KAS_mission_kobold_unification_desc:0 "Only by assuming a dominant position within Kobold-Kind can we expect to begin the long process of unification. Be it by the spear or with words we must persuade the other clans to bend the knee and recognise our dominion over the Kobolds."
+ KAS_mission_kobold_unification.tooltip.completion:0 "All other Kobold Clans in Western Cannor will be given a chance at becoming our §Tsubjects§!. Their response will be affected by their §Gopinion§! of us, §Grelative army size§! and §Geconomic strength§!. Shall they refuse, we will be given the option to declare war on them instead; having §Ggood relations§!, §Ghigh trust§! and a §Gdevelopment§! will increase our chances of to have them accept.\n\nHowever, if we do not follow through with their subjugation §Rwe will face a revolt from some of our clansmen!§!\n"
+
+ KAS_mission_show_strength_title:0 "Show strength"
+ KAS_mission_show_strength_desc:0 "Our neighbours think of us as little more than pests, nuisances or worse - prey. Let us remind them who brought on the Dragonwake, let us remind them who we are!"
+ KAS_mission_show_strength.is_rival.tooltip:0 "Has been rivaled by us and scornfully insulted."
+ 
+ KAS_mission_defy_tallfolk_title:0 "Defy the Tall-Folk"
+ KAS_mission_defy_tallfolk_desc:0 "The storm is here: as anticipated the Tall-Folk stand ready to destroy us, and have gathered a en enormous army in hopes to break us. We will not go quietly - let this be the hour when we wield our spears together. Fell deeds awake. This is our home, our birthright!"
+ KAS_mission_defy_tallfolk.completion.tooltip:0 "If we have §Tdeclared an offensive war:§! we will be rewarded with power projection, prestige and convert our ruler to an offense-focused general.\n\nIf we were §Tdeclared upon:§! we will be granted a defensive modifier until our ruler death and convert our ruler to a defense-oriented general."
+
+ KAS_destroy_nimscodd_title:0 "Destroy Nimscodd"
+ KAS_destroy_nimscodd_desc:0 "Nimscodd is one of the last bastions of Gnomish presence in Cannor. We shall land on their shores, lay siege to their city and bring an end to this so-called rivalry."
+
+ KAS_obliterate_portnamm_title:0 "The Fate of Portnamm"
+ KAS_obliterate_portnamm_desc:0 "Portnamm has always stood by its pesky brethren in Nimscodd, lending ships, men and contraptions to our enemies during the Dragonwake, and we have never forgotten that transgression. Portnamm must pay."
+ KAS_obliterate_portnamm.completion.tooltip:0 "If we complete this mission while controling Portnamm, we will sack the city. Otherwise we will gain prestige."
+
+ KAS_clan_consolidation_title:0 "Consolidate the Clans"
+ KAS_clan_consolidation_clan:0 "The period of disunity which followed the Dragonwake was a mistake - one that our [Root.Monarch.GetTitle] has finally brought to an end. By bringing the other Kobold clans to heel, we now have the opportunity to finally bring all of our brethren under one rule."
+
+ KAS_control_pass_title:0 "Control the Pass"
+ KAS_control_pass_desc:0 "The Gnomish Pass is both a staging ground for Gnomish resistance as well an ideal defensive position should we seek to expand our hold over the coast. Controling it is key in bringing the region under our fold and so control it we shall."
+
+ KAS_connect_coast_title:0 "Connect the Coast"
+ KAS_connect_coast_desc:0 "The Greenscales have beeen long isolated from the rest of the Dragon Coast. This has left the coast ripe for incursion from the north, and if we are to assert our domain we must plug this gap, and reconnect with our brethren."
+
+ KAS_Kobold_kingdom_formation_title:0 "The Dawn of Kobildzan"
+ KAS_Kobold_kingdom_formation_desc:0 "Our home lays secure and our people have been brought under one single banner. For the first time since the Dragonwake we act as one. It is time to proclaim ourselves a proper kingdom - the true home of all Kobolds on the Dragon Coast!"
+ kas_mission_event.1.permanentclaims.tooltip:0 "[Root.GetName] gets permanent claimns on every §YKobold§! province in §Western Cannor§!."
+ KAS_Kobold_kingdom_formation.completion.tooltip:0 "We will integrate §Yall Kobold subjects§! with their capital in the Dragoncoast."
+
+ KAS_Beyond_approach_title:0 "Beyond the Approach"
+ KAS_Beyond_approach_desc:0 "We may have made a life for ourselves in the caves and hills of the Dragon Coast, but to the west lies the vast expanse of green and blue. Rumours of far away lands, treasure and adventure have elicited no small amount of excitement among our kin. We should mount expeditions to charter thes new lands and trading ventures!"
+
+ KAS_end_gnome_wars_title:0 "Peace at Last"
+ KAS_end_gnome_wars_desc:0 "The Gnomish threat is gone at last, and we have solidified our control over the Gnomes' former possession on the Dragon Coast. As the dust settles it is now time for us to ask ourselves: what shall we make of our former adversaries?"
+
+ KAS_discover_new_hoard_title:0 "The Western Shores"
+ KAS_discover_new_hoard_desc:0 "We have heard rumours of a distant land to the west, once thought lost. This has of course caused a great agitation to seize the people of Cannor, and Kobolds are no exception to this rule. Our curiosity has been piqued - the mysterious land of Aelantir calls to us."
+ KAS_discover_new_hoard.discover.alentir:0 "Has discovered any province in eastern Aelantir"
+
+ KAS_Kobold_Crafts_title:0 "Sponsor Craftsmen"
+ KAS_Kobold_Crafts_desc:0 "Kobolds are well known through Cannor and even beyond as being iventive and crafty creatures. By securing additional supplies and funds, we could further encourage our craftsment, developing our economy and opening our markets to the nearby tall-folk even, should we wish it so."
+
+ KAS_kobold_hoard_proper_title:0 "A Proper Hoard"
+ KAS_kobold_hoard_proper_desc:0 "The gathering of gold has always been a hallmark of kobold-kind, and even now we still feel the lingering call that afflicts all of us. But...who are we to resist such a calling in the first place? Dwarves have their holds, Humans their sky-bearing towers, the Elves have their enchanted lands. Why shouldn't we have our hoard?"
+
+ ##Gnome tolerance mission
+
+ KAS_Rebuild_Nimscod_title:0 "Rebuild Nimscodd"
+ KAS_Rebuild_Nimscod_desc:0 "The wounds of war are often said to be everlasting, and that blood - even when washed away - always remains. Almost a thousand years of animosity cannot be easily undone; it will take dragonic efforts to rebuild the gomes' trust in us - and our people's trust in them. Through patronage, good will and steady guidance, we can slowly remedy the ties which were shattered during the Dragonwake and to truly bring the people of Nimscodd into our great Trivuak."
+ KAS_Artificery_Patronage_title:0 "Artificiery Patronage"
+ KAS_Artificery_Patronage_desc:0 "Artificiery promises a bright future for our people, one spearheaded by innovation and not magic. By sponsoring the Artificiers which have established themselves in our society, we can reap the benefits of their discoveries for the benefits of the state rather than of the few guilds founded by the more scientifically-minded among our people."
+ KAS_Grand_Academy_title:0 "The Bright Academy"
+ KAS_Grand_Academy_desc:0 "The sentence 'Faith in science' is frequently uttered by Artificiers, if not outright stamped upon their devices and gizmos. But what is a faith withut a church? We shall endeavour to build the grandest scientific academy in western Cannor. No longer shall we live in the shadows of ignorance, for our people will have a beacon of knowledge to turn towards."
+ KAS_Grand_Academy.completion.tooltip:0 "We will begin a §Yresearch debate§! at the newly founded Bright Academy. Every §Yeight years§! a new debate will occur, allowing us to sponsor new avenues of research."
+
+ KAS_Kobold_Supremacy_title:0 "Kobold Supremacy"
+ KAS_Kobold_Supremacy_desc:0 "To be truly safe from retaliation we must ensure that the gnomes are truly dealt with. Even as we tigthen our hold onto the coast, the Gnomes plot against us - seeking to rise up and destroy our lands. Thus we are faced with but one choice: to chase them off, drive them out of the Dragoncoast by force of arms."
+ KAS_Kobold_Supremacy.completion.tooltip:0 "§RThe Gnomes will rise up in revolt throughout our owned Gnomish provinces!§!"
+ KAS_Crack_Code_title:0 "Crack the Code"
+ KAS_Crack_Code_desc:0 "While they were no match for us in the end, the Gnomes have managed one final trick. Their manuscripts and schematics are encrypted in some sort of code, one which we lack the capabilities of fully understanding. We need to secure the support of experts if we are to access this trove of scientific knowledge."
+ KAS_Crack_Code.completion.tooltip:0 "Our Artificiers will begin the arduous task of translating existing Gnomish texts and schematics. This process might take years or even decades, depending on how we resolve the hurdles they may encounter."
+ KAS_Koobold_Artificery_title:0 "Kobold Technocrats"
+ KAS_Koobold_Artificery_desc:0 "With the founding of a proper scientific academy as well as the sponsorship of sciences secured, our artificiers will have no trouble making breakthrough after breakthrough, bringing our [Root.GovernmentName] glory and the means to further solidify our technological lead over the tall-folk."
+ KAS_Koobold_Artificery.code_cracked.tooltip:0 "We have cracked the Gnomish code."
+
+ #Kobodzilan missions
+
+ KAS_Southern_Frontier_title:0 "The Southern Frontier"
+ KAS_Southern_Frontier_desc:0 "The Dragon Coast is our rightful claim. To the South extends Reveria, a powerful Kingdom, and further beyond extends the domain of the Lorentish kings. If we are to be safe and begin expanding east, then we must ensure that this area falls firmly under our control."
+
+ KAS_Destroy_Eaglecrest_title:0 "Destroy Eaglecrest"
+ KAS_Destroy_Eaglecrest_desc:0 "The Tall-Folk of Eaglecrest have a long-standing tradition of persecuting Kobolds: they ridicule us, turn a blind eye to our kin's capture and enslavement and, most vile of all, treat our hide as a commodity to be paraded and haggled for. This city of horrors must be destroyed - no longer can its rotten people be allowed to treat our kind as so."
+
+ KAS_Military_Reforms_title:0 "Military Reforms"
+ KAS_Military_Reforms_desc:0 "The Dragonwake has passed, and with it has our edge; our troop's advantage has only found itself increasingly blunted, and it has become increasingly pressing that we procesed with fast, far-reaching military reforms."
+ 
+ KAS_Eastern_Frontier_title:0 "Downfall of Westmoors"
+ KAS_Eastern_Frontier_desc:0 "Westmoors are but a mere puppet of a larger shadow, but they in themselves pose a clear and present threat to our current existence. We must actively seek out and dismantle the Lordship, wiping it from existence and resettling the coast with our people. The locals might oppose us, but once their overlords have been chased off then there will be hardly anybody left to stop our kin to put them in their place."
+
+ KAS_Conquer_Westmoors_title:0 "Skewer Gawed"
+ KAS_Conquer_Westmoors_desc:0 "The Eagle has fallen, and as it hobbles and hops to find shelter among the corpses of the brutes it once commanded, we stand tall - as the Dragon of the West, the slayers of Gawed!"
+ KAS_Conquer_Westmoors.tooltip.completion:0 "We will gain a permanent claim on every province in the Alenic Frontier which are cores of Gawed."
+
+ KAS_Skewer_Gawed_title:0 "Eradicate the Eagle"
+ KAS_Skewer_Gawed_desc:0 "Gawed must not simply be destroyed, it must be eradicated - utterly erased from living memory."
+ KAS_Dummy_Kobildzan_Mission_Icon.completion.tooltip:0 "Gawed will lose all its cores on our provinces."
+
+ KAS_Control_Plateau_title:0 "Conquer the Plateau"
+ KAS_Control_Plateau_desc:0 "With Gawed being no more, all that remains is to finish off the Reachmen. Either through diplomacy or war, these wayward cities and lordships must be made to recognise our claim; Gawed is gone, but we remain."
+
+ KAS_Delicate_Balance_title:0 "A Delicate Balance"
+ KAS_Delicate_Balance_desc:0 "Our [Root.GovernmentName] is one at the mercy of factionalism. Shall we wish to make any significant progress, we need to bring these different clans to heel."
+ KAS_Delicate_Balance.Redscales.Tooltip:0 "Has taken the decision §YReign in the Redscales§!."
+ KAS_Delicate_Balance.Greenscales.Tooltip:0 "Has taken the decision §YReign in the Greenscales§!."
+ KAS_Delicate_Balance.Bluescales.Tooltip:0 "Has taken the decision §YReign in the Bluescales§!."
+ KAS_Delicate_Balance.completion.tooltip:0 "We will no longer be at risk of a factional civil war."
+
+ KAS_Kobold_Identity_title:0 "The Kobold Identity"
+ KAS_Kobold_Identity_desc:0 "Following the Dragonwake and the ascent of Kobildzan, we have thrived. Yet, the further we pushed, the further we felt from our own identity. The time has come to decide what the future of our people will be."
+
+ #Misc
+ KAS_Gnome_Undecided_1_title:0 "Branching Mission"
+ KAS_Gnome_Undecided_1_desc:0 ""
+ KAS_Gnome_Undecided_2_title:0 "Branching Mission"
+ KAS_Gnome_Undecided_2_desc:0 ""
+ KAS_Gnome_Undecided_3_title:0 "Branching Mission"
+ KAS_Gnome_Undecided_3_desc:0 ""
