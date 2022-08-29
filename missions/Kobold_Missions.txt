@@ -1651,7 +1651,7 @@ KAS_Kobold_Gnome_Antagonism = {
 			hidden_effect = {
 				country_event = {
 					id = kas_research_event.6
-					days = 300
+					days = 31
 				}
 			}
 		}
@@ -1677,7 +1677,7 @@ KAS_Kobold_Gnome_Antagonism = {
 		}
 		effect = {
 			country_event = {
-				id = kas_research_event.100
+				id = kas_research_event.5
 			}
 			add_country_modifier = {
 				name = KAS_Kobold_artificery

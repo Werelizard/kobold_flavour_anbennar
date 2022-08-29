@@ -11,8 +11,62 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Fund the agricultural project
 		name = kas_research_event.1.a
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_agriculture
+			duration = 1460
+		}
+	}
+
+	option = { #Fund the medical project
+		name = kas_research_event.1.b
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_medical
+			duration = 1460
+		}
+	}
+
+	option = { #Not enough money
+		name = kas_research_event.1.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_prestige = -25
+	}
+
+	after = {
+		hidden_effect = {
+			random_list = {
+				25 = {
+					country_event = {
+						id = kas_research_event.1
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.2
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.3
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.4
+						days = 1460
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -23,8 +77,62 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Fund the artillery project
 		name = kas_research_event.2.a
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_artillery
+			duration = 1460
+		}
+	}
+
+	option = { #Fund the metal plating project
+		name = kas_research_event.2.b
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_plating
+			duration = 1460
+		}
+	}
+
+	option = { #Not enough money
+		name = kas_research_event.2.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_prestige = -25
+	}
+
+	after = {
+		hidden_effect = {
+			random_list = {
+				25 = {
+					country_event = {
+						id = kas_research_event.1
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.2
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.3
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.4
+						days = 1460
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -35,8 +143,62 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Fund the alchemy project
 		name = kas_research_event.3.a
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_alchemy
+			duration = 1460
+		}
+	}
+
+	option = { #Fund the explosive project
+		name = kas_research_event.3.b
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_explosives
+			duration = 1460
+		}
+	}
+
+	option = { #Not enough money
+		name = kas_research_event.3.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_prestige = -25
+	}
+
+	after = {
+		hidden_effect = {
+			random_list = {
+				25 = {
+					country_event = {
+						id = kas_research_event.1
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.2
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.3
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.4
+						days = 1460
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -47,8 +209,62 @@ country_event = {
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Fund the gold smelting project
 		name = kas_research_event.4.a
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_gold_smelting
+			duration = 1460
+		}
+	}
+
+	option = { #Fund the experimental weaponry project
+		name = kas_research_event.4.b
+		add_years_of_income = -2.5
+		add_country_modifier = {
+			name = KAS_invention_experimental
+			duration = 1460
+		}
+	}
+
+	option = { #Not enough money
+		name = kas_research_event.4.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -15
+		}
+		add_prestige = -25
+	}
+
+	after = {
+		hidden_effect = {
+			random_list = {
+				25 = {
+					country_event = {
+						id = kas_research_event.1
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.2
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.3
+						days = 1460
+					}
+				}
+				25 = {
+					country_event = {
+						id = kas_research_event.4
+						days = 1460
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -61,11 +277,43 @@ country_event = {
 	id = kas_research_event.5
 	title = kas_research_event.5.title
 	desc = kas_research_event.5.desc
+	picture = CAVE_eventPicture
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Focus on inventions
 		name = kas_research_event.5.a
+		add_treasury = -4000
+		custom_tooltip = kas_research_event.5.a.completion.tooltip
+		hidden_effect = {
+			set_country_flag = KAS_New_artificer_privileges
+		}
+	}
+
+	option = { #Implement the administrative scheme
+		name = kas_research_event.5.b
+		add_treasury = -4000
+		add_country_modifier = {
+			name = KAS_adminsitrative_artificers 
+			duration = -1
+		}
+	}
+
+	option = { #Foster scientific growth
+		name = kas_research_event.5.c
+		add_treasury = -4000
+		add_country_modifier = {
+			name = KAS_open_fairs
+			duration = -1
+		}
+	}
+
+	option = { #Independent science
+		name = kas_research_event.5.d
+		add_country_modifier = {
+			name = KAS_indepent_science 
+			duration = -1
+		}
 	}
 }
 
@@ -73,26 +321,300 @@ country_event = {
 #Cracking the Gnome Code#
 #########################
 
+#Initial Event
 country_event = {
 	id = kas_research_event.6
 	title = kas_research_event.6.title
 	desc = kas_research_event.6.desc
+	picture = CAVE_eventPicture
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #Kidnap a gnome
 		name = kas_research_event.6.a
+		add_years_of_income = -1
+
+		hidden_effect = {
+			random_list = {
+				10 = {
+					country_event = {
+						id = kas_research_event.7
+						days = 270
+					}
+				}
+				90 = {
+					country_event = {
+						id = kas_research_event.8
+						days = 90
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Hire a shady advisor
+		name = kas_research_event.6.b
+		add_years_of_income = -1
+
+		hidden_effect = {
+			country_event = {
+				id =  kas_research_event.9
+				days = 365
+			}
+		}
+	}
+
+	option = { #Look through nimscodd
+		name = kas_research_event.6.c
+		hidden_effect = {
+			country_event = {
+				id =  kas_research_event.10
+				days = 5
+			}
+		}
 	}
 }
 
+
+#Kidnap success
 country_event = {
-	id = kas_research_event.100
-	title = kas_research_event.100.title
-	desc = kas_research_event.100.desc
+	id = kas_research_event.7
+	title = kas_research_event.7.title
+	desc = kas_research_event.7.desc
+	picture = CAVE_eventPicture
 
 	is_triggered_only = yes
 
 	option = {
-		name = kas_research_event.100.a
+		name = kas_research_event.7.a
+
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.15
+				days = 60
+			}
+		}
+	}
+}
+
+#Kidnap Fail
+country_event = {
+	id = kas_research_event.8
+	title = kas_research_event.8.title
+	desc = kas_research_event.8.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Dig through nimscodd
+		name = kas_research_event.8.a
+		hidden_effect = {
+			country_event = {
+				id =  kas_research_event.10
+				days = 5
+			}
+		}
+	}
+
+	option = { #Hire an advisor
+		name = kas_research_event.8.b
+		add_years_of_income = -1
+		hidden_effect = {
+			country_event = {
+				id =  kas_research_event.9
+				days = 270
+			}
+		}
+	}
+}
+
+#Advisor needs more money
+country_event = {
+	id = kas_research_event.9
+	title = kas_research_event.9.title
+	desc = kas_research_event.9.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.9.a
+		add_years_of_income = -2
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.15
+				days = 730
+			}
+		}
+	}
+
+	option = {
+		name = kas_research_event.9.b
+		add_adm_power = -100
+		add_dip_power = -100
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.15
+				days = 1095
+			}
+		}
+	}
+
+	option = {
+		name = kas_research_event.9.c
+		add_estate_loyalty = {
+			estate = estate_artificers
+			loyalty = -20
+		}
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.15
+				days = 1460
+			}
+		}
+	}
+}
+
+#Dig through nimscodd
+country_event = {
+	id = kas_research_event.10
+	title = kas_research_event.10.title
+	desc = kas_research_event.10.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Use explosives
+		name = kas_research_event.10.a
+		add_mil_power = -100
+		hidden_effect = {
+			random_list = {
+				5 = {
+					country_event = {
+						id = kas_research_event.12
+						days = 10
+					}
+				}
+				95 = {
+					country_event = {
+						id = kas_research_event.13
+						days = 10
+					}	
+				}
+			}
+		}
+	}
+
+	option = { #Hire more men
+		name = kas_research_event.10.b
+		add_manpower = -5000
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.14
+				days = 300
+			}
+		}
+	}
+}
+
+#Explosive find
+country_event = {
+	id = kas_research_event.12
+	title = kas_research_event.12.title
+	desc = kas_research_event.12.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.12.a
+		add_prestige = 5
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.14
+				days = 30
+			}
+		}
+	}
+}
+
+#Explosive loss
+country_event = {
+	id = kas_research_event.13
+	title = kas_research_event.13.title
+	desc = kas_research_event.13.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Nothing, just takes a LOT longer
+		name = kas_research_event.13.a
+		add_prestige = -5
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.14
+				days = 365
+			}
+		}
+	}
+}
+
+#Found a clue
+country_event = {
+	id = kas_research_event.14
+	title = kas_research_event.14.title
+	desc = kas_research_event.14.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.14.a
+		add_prestige = 5
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.15
+				days = 90
+			}
+		}
+	}
+}
+
+#Eureka
+country_event = {
+	id = kas_research_event.15
+	title = kas_research_event.15.title
+	desc = kas_research_event.15.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.15.a
+		change_innovativeness = 5
+		hidden_effect = {
+			country_event = {
+				id = kas_research_event.16
+				days = 365
+			}
+		}
+	}
+}
+
+#COde cracked
+country_event = {
+	id = kas_research_event.16
+	title = kas_research_event.16.title
+	desc = kas_research_event.16.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = kas_research_event.16.a
+		change_innovativeness = 5
+		hidden_effect = {
+			set_country_flag = KAS_Cracked_Code
+		}
 	}
 }

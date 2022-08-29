@@ -72,9 +72,6 @@
  kas.mission_event.13.c:0 "Let the Tall-Folk have their glory and their gold, we shall have our science!"
  kas.mission_event.13.c.tooltip:0 "This sets up down the path towards establishing a §TKobold technocracy§!, unlocking the myseries of science and artificery." 
 
- kas_research_event.100.title:0 "Mastering Artificery"
- kas_research_event.100.desc:0 ""
-
  #Faction events
 
  kas_factions_event.1.title:0 "The succession of [Root.GetName]"

@@ -1,4 +1,83 @@
 ﻿l_english:
  #Mission events
-  kas_research_event.5.title:0 "Kobold Artificery"
-  kas_research_event.5.desc:0 ""
+ kas_research_event.5.title:0 "Mastering Artificery"
+ kas_research_event.5.desc:0 "They called us monsters.\n\nPests, even.\n\nBut through tribulations, hard work and some good old fashioned Kobold luck we have truly mastered artificery. Our engines roar to life - built upon the modest ambitions of our long-gone gnomish rivals. We are the masters of Artificery now: steam, vapours, blacksmithing - all yield to us. Our natural proclivity for the conception of traps, mechanisms and simple clockwork has been transformed into something more, something better. We are no longer the Kobolds of yore. Yet, we are still nonethless bound to that past. As we contemplate what to do with our newly empowered Artificery guilds, we are faced with the exciting choice of choosing a future for our [Root.GovernmentName]'s Artificery. Three options present themselves to us: the first is to direct the Artificer's research more closely, the second, to use our enw discovery to establish a more efficient state and the third would be to foster local scientific growth."
+ kas_research_event.5.a:0 "We must focus on directed inventions!"
+ kas_research_event.5.a.completion.tooltip:0 "This will unlock new privileges for the Artificers."
+ kas_research_event.5.b:0 "Implement the administrative scheme."
+ kas_research_event.5.c:0 "Open a new Academy."
+ kas_research_event.5.d:0 "Science should be free of meddling."
+
+ kas_research_event.1.title:0 "The Academic Debate of [GetYear]"
+ kas_research_event.1.desc:0 "With the founding of the Bright Academy, Artificery now truly has a special place in Castannor to flourish. As a pendulum, research swings: from one tendency to the next, one project to another, it is never quite constant. Science demands innovation afterall. As it has come to be the tradition in the Academy, two rival groups of researchers have taken the podium today to present rival projects, and petitioned [Root.Monarch.GetTitle] [Root.Monarch.GetName] for financing. The cost is of course, steep, but it has been argued that the benefits far outweigh the cost.\n\nThe first project is dedicated to agrculture, in particular the applications of artificial soil in the control of weeds and the growth of wheath. The second project is an offshoot of more recent alchemical research and focuses on providing broad cures and tinctures to be made available to our populace."
+ kas_research_event.1.a:0 "Fund the Argicultural project."
+ kas_research_event.1.b:0 "Fund the Medicinal project."
+ kas_research_event.1.c:0 "We aren't interested in any of these projects."
+
+ kas_research_event.2.title:0 "The Academic Debate of [GetYear]"
+ kas_research_event.2.desc:0 "With the founding of the Bright Academy, Artificery now truly has a special place in Castannor to flourish. As a pendulum, research swings: from one tendency to the next, one project to another, it is never quite constant. Science demands innovation afterall. As it has come to be the tradition in the Academy, two rival groups of researchers have taken the podium today to present rival projects, and petitioned [Root.Monarch.GetTitle] [Root.Monarch.GetName] for financing. The cost is of course, steep, but it has been argued that the benefits far outweigh the cost.\n\nThe first project - backed by Redscale incentives, presents radically new sulfur ammunition for our artillery, promising to tear apart our rivals and shatter the tall-folk's resolve. The second is more modest, a simple application of tampering to steel, to be deployed in the field for additional protection."
+ kas_research_event.2.a:0 "Sponsor the ammunition research."
+ kas_research_event.2.b:0 "Back the metal tampering project."
+ kas_research_event.2.c:0 "We aren't interested in any of these projects."
+
+ kas_research_event.3.title:0 "The Academic Debate of [GetYear]"
+ kas_research_event.3.desc:0 "With the founding of the Bright Academy, Artificery now truly has a special place in Castannor to flourish. As a pendulum, research swings: from one tendency to the next, one project to another, it is never quite constant. Science demands innovation afterall. As it has come to be the tradition in the Academy, two rival groups of researchers have taken the podium today to present rival projects, and petitioned [Root.Monarch.GetTitle] [Root.Monarch.GetName] for financing. The cost is of course, steep, but it has been argued that the benefits far outweigh the cost.\n\nThe first is rather exuberant, promising long life to our [Root.Monarch.GetTitle] - though the speaker stops short from describing it as an immortality elixir. The second is the polar opposite: a revolutionary explosive that has - literally and figuratively - been a blast to test, with suggested applications to naval and land warfare."
+ kas_research_event.3.a:0 "Immortality has no price."
+ kas_research_event.3.b:0 "Fund the experimental explosives research."
+ kas_research_event.3.c:0 "We aren't interested in any of these projects."
+
+ kas_research_event.4.title:0 "The Academic Debate of [GetYear]"
+ kas_research_event.4.desc:0 "With the founding of the Bright Academy, Artificery now truly has a special place in Castannor to flourish. As a pendulum, research swings: from one tendency to the next, one project to another, it is never quite constant. Science demands innovation afterall. As it has come to be the tradition in the Academy, two rival groups of researchers have taken the podium today to present rival projects, and petitioned [Root.Monarch.GetTitle] [Root.Monarch.GetName] for financing. The cost is of course, steep, but it has been argued that the benefits far outweigh the cost.\n\nThe first is a gold smelting and ore quality assesment tool, combining elements of Gnomish alchemy and Kobold goldsmithing to provide finer Crowns minting. The second is...well...rather difficult to put into words: it is, simply put, a protoype for experimental weaponry designed to channel combustible materia into a...well, you get my point."
+ kas_research_event.4.a:0 "Back the goldsmithing proposal."
+ kas_research_event.4.b:0 "Support the experimental weaponry...thing..project."
+ kas_research_event.4.c:0 "We aren't interested in any of these projects."
+
+ #Cracking the Code Event Chain
+
+ kas_research_event.6.title:0 "A Small Hurdle"
+ kas_research_event.6.desc:0 "In our efforts to study the Gnomish inventions, we have discovered that the cryptogram employed defies even our brightest minds. This has prompted those in charge of breaking the Gnomish code to reach out to our [Root.Monarch.GetTitle], offering a variety of solutions, ranging from outright kidnamping a Gnome from a nearby country to turning to an exotic and rather shady specialist. A few dissenting voices have argued that we might benefit from searching Nimscodd for any clues that may help in cracking the cipher."
+ kas_research_event.6.a:0 "Attempt to Kidnap a Gnomish inventor."
+ kas_research_event.6.b:0 "Hire a local specialist."
+ kas_research_event.6.c:0 "Let us return to Nimscodd instead."
+
+ kas_research_event.7.title:0 "A Succesfull Kidnapping!"
+ kas_research_event.7.desc:0 "By sheer luck and cunning, our agents were able to capture a famed Gnomish Artificer from abroad. This was no easy feat, as the creature was somehow aware of our plans and had it not been for a bold move by the spies' leader we would be back to square one. With the Gnome now ours, it is only a matter of time until he breaks and gives us the information we need."
+ kas_research_event.7.a:0 "Excellent..."
+
+ kas_research_event.8.title:0 "A Failed Gamble"
+ kas_research_event.8.desc:0 "Our agents were not able to secure the Gnomish iventor whom they had supposed to be in possession of the beans to crack the code. This was to be expected unfortunately, as the creature was somehow aware of our plans in advance. We will have to find another way to secure a means to break through the encryption."
+ kas_research_event.8.a:0 "Nimscodd might hold a clue."
+ kas_research_event.8.b:0 "Hire the local specialist."
+
+ kas_research_event.9.title:0 "Specialist Demands New Funds"
+ kas_research_event.9.desc:0 "The specialist we hired has returned and while assuring us they are making good progress on the cipher, they have also stressed that they need additional ressources to break through the code. The ammount demanded is, to put it bluntly, exorbitant. Refusing to pay however would without a doubt delay our efforts..."
+ kas_research_event.9.a:0 "Pay them."
+ kas_research_event.9.b:0 "Divert some of the state's ressources."
+ kas_research_event.9.c:0 "Do I look as if were made of gold?!"
+
+ kas_research_event.10.title:0 "Digging Through Nimscodd"
+ kas_research_event.10.desc:0 "As our specialists arrived in Nimscodd their attention was immediately seized by a peculiar structure whose fondations had been léaid bare in the earlier conflict. At first glance it appeared as any normal Gnomish home, but upon closer inspection it became quite apparent that it reached further deeper underground than any surrounding building. Unfortunately, its entrance has proven difficult to access owing to a large amount of rubble blocking our way."
+ kas_research_event.10.a:0 "Use explosives to clear the way."
+ kas_research_event.10.b:0 "Hire more men."
+
+ kas_research_event.12.title:0 "An Explosive Find"
+ kas_research_event.12.desc:0 "The blast shakes the earth, and our lead researcher cautiously advances. As the dust settles she can only grin, noticing the wide open door leading into the hidden chambers bellow. She and her team know this for sure now: the Gnomes' secrets will soon be theirs."
+ kas_research_event.12.a:0 "Fantastic!"
+
+ kas_research_event.13.title:0 "A Resounding Failure"
+ kas_research_event.13.desc:0 "From the moment that the charges were laid, our lead researcher knows this was a mistake. Her worries are only further compounded when - after the explosives are detonated - she returns to the site. The explosion has done nothing but make matters worse, collapsing even more of the soil into the opening, further hampering the project."
+ kas_research_event.13.a:0 "Grab a shovel."
+
+ kas_research_event.14.title:0 "A Clue in Nimscodd"
+ kas_research_event.14.desc:0 "The underground workshop was an unexpected - though not unwelcome find: stocked to burst with contraptions, books, notes, alchemical reageants and all manners of Gnomish inventions. This is it. This is where we will find answers. All of the late inventor's possessions are packe and shipped to the capital, where our artificers hope that this will be enough to break through the Gnomes' encryption and finally understand the schematics."
+ kas_research_event.14.a:0 "Soon the Gnomes' secrets will be ours."
+
+ kas_research_event.15.title:0 "Eureka"
+ kas_research_event.15.desc:0 "'Eureka!' the artificer explains as they burst through and into our [Root.Monarch.GetTitle]'s chambers. 'I have it, I figured it out!\n\nThrough franctic gestures and erratic babblings, the blue-scaled Kobold rapidly and rather extensively describes the resoning through which our researchers have finally been able to break through the Gnomes' encryption. While a full translation is yet to be completed, it is enough to inspire great confidence in our Artificer's ability."
+ kas_research_event.15.a:0 "Soon..."
+
+ kas_research_event.16.title:0 "Cryptic No More"
+ kas_research_event.16.desc:0 "The first copies of the Gnomes' newly translated schematics were printed today, and immediately made widely available to every Artificer in the country. The proposed inventions and contraptions are mind boggling, and yet appear so evident when once laid out. One may almost regret having had to chase their kind off, for had they remained, who knows what other marvel they would have come up with?"
+ kas_research_event.16.a:0 "Science is wonderful."
+
+ 
