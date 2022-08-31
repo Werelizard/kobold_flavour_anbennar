@@ -1,0 +1,1388 @@
+##############################
+#Kobold Trade Empire Missions#
+##############################
+
+KAS_Trade_Empire_Left = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		has_country_flag = KAS_Kobld_Merchant_Empire
+	}
+
+	KAS_TE_Settle_Dalaire = {
+		required_missions = {
+			KAS_discover_new_hoard 
+		}
+		position = 7
+		icon = mission_unknown_mission
+
+		provinces_to_highlight = {
+			colonial_region = colonial_dalaire
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				colonial_region = colonial_dalaire
+				is_city = yes
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = KAS_Frontier_Exploration
+				duration = 5475
+			}
+			
+		}
+	}
+
+	KAS_TE_Settle_Frontier = {
+		required_missions = {
+			KAS_TE_Settle_Dalaire
+		}
+		position = 8
+		icon = mission_unknown_mission
+
+		provinces_to_highlight = {
+			region = dalaire_region
+		}
+
+		trigger = {
+			dalaire_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			1202 = {
+				OR = {
+					owned_by = ROOT
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+				development = 10
+			}
+			calc_true_if = {
+				any_province = {
+					region = dalaire_region
+					num_of_times_improved = 4
+					OR = {
+						owned_by = ROOT
+						owner = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				amount = 8
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_TE_Settle_Frontier.completion.tooltip
+			hidden_effect = {
+				every_province = {
+					limit = {
+						region = dalaire_region
+					}
+					add_kobold_minority_size_effect = yes
+				}
+			}
+			add_dip_power = 100
+			create_conquistador = { tradition = 50 }
+			1202 = {
+				rename_capital = "Zalayurzin"
+				change_province_name = "Zalayurzin"
+				add_province_modifier = {
+					name = KAS_TE_Zalayurzin
+					duration = -1
+				}
+			}
+		}
+	}
+
+	KAS_TE_Ghosts_And_Isles = {
+		required_missions = {
+			KAS_TE_Settle_Frontier
+		}
+		position = 9
+		icon = mission_unknown_mission
+
+		provinces_to_highlight = {
+			colonial_region = colonial_broken_sea
+			colonial_region = colonial_ynn
+		}
+
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40
+				colonial_region = colonial_broken_sea
+				colonial_region = colonial_ynn
+				is_city = yes
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_TE_Ghosts_And_Isles.completion.tooltip
+			custom_tooltip = KAS_TE_Ghosts_And_Isles.perma_claims.tooltip
+			hidden_effect = {
+				every_province = {
+					limit = {
+						NOT = {
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+						NOT = {
+							is_core = ROOT
+						}
+						OR = {
+							region = rzenta_region
+							region = broken_isles_region
+							region = forest_of_the_cursed_ones_region
+							region = dolindha_region
+							region = veykoda_region
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	KAS_TE_Northern_Dominion = {
+		required_missions = {
+			KAS_TE_Ghosts_And_Isles
+		}
+		position = 10
+		icon = mission_unknown_mission
+
+		trigger = {
+			1165 = {
+				is_strongest_trade_power = ROOT
+			}
+			1139 = {
+				is_strongest_trade_power = ROOT
+			}
+			1847 = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_TE_Northern_Dominion.completion.tooltip
+			custom_tooltip = KAS_TE_Northern_Dominion.perma_claims.tooltip
+			add_prestige = 25
+			hidden_effect = {
+				every_province = {
+					limit = {
+						NOT = {
+							owner = {
+								is_subject_of = ROOT
+							}
+						}
+						NOT = {
+							is_core = ROOT
+						}
+						colonial_region = colonial_eordand
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	KAS_TE_Push_West = {
+		required_missions = {
+			KAS_TE_Northern_Dominion 
+		}
+		position = 11
+		icon = mission_unknown_mission
+
+		provinces_to_highlight = {
+			province_id = 1776
+			province_id = 1815
+			province_id = 1746 
+			province_id = 1771 
+			province_id = 1202
+			
+			#Great Road Provinces (To be move to group)
+			province_id = 1984
+			province_id = 2821
+			province_id = 1792
+			province_id = 2843
+			province_id = 1816
+			province_id = 1188
+			province_id = 1186
+			province_id = 1168
+			province_id = 1169
+			province_id = 2814
+			province_id = 2840
+			province_id = 2488
+			province_id = 2838
+			province_id = 1749
+			province_id = 1746
+			province_id = 1318
+			province_id = 1747
+			province_id = 1745
+			province_id = 1744
+			province_id = 1200
+			province_id = 2848
+			province_id = 1212
+			province_id = 1207
+		}
+
+		trigger = {
+			1776 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1815 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1771 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1746 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1202 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_TE_Push_West.HasBuiltRoad.Tooltip
+				has_country_flag = KAS_TE_Built_Great_Road
+			}
+		}
+
+		effect = {
+			1776 = {
+				rename_capital = "Ezkikroa"
+				change_province_name = "Ezkikroa"
+				change_culture = ROOT
+				change_religion = ROOT
+				center_of_trade = 1
+				add_province_modifier = {
+					name = KAS_TE_Trade_Outpost_Major
+					duration = -1
+				}
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 20
+					key = KAS_The_Great_Road
+				}
+			}
+			1815 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 20
+					key = KAS_The_Great_Road
+				}
+			}
+			1171 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 20
+					key = KAS_The_Great_Road
+				}
+			}
+			1746 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 20
+					key = KAS_The_Great_Road
+				}
+			}
+			1202 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 20
+					key = KAS_The_Great_Road
+				}
+			}
+		}
+	}
+
+	KAS_TE_Connect_North_South = {
+		required_missions = {
+			
+		}
+		position = 12
+		icon = mission_unknown_mission
+
+		provinces_to_highlight = {
+			province_id = 1801
+		}
+
+		trigger = {
+			treasury = 1000
+			1801 = {
+				has_great_project = {
+					type = arca_venaan
+					tier = 3
+				}
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+		}
+
+		effect = {
+			add_treasury = -1000
+			1031 = {
+				add_province_modifier = {
+					name = KAS_Fortified_Outpost
+					duration = -1
+				}
+				add_building = fort_18th
+			}
+		}
+	}
+
+	KAS_TE_Ynn_Norn_Route = {
+		required_missions = {
+			KAS_TE_Connect_North_South
+		}
+		position = 13
+		icon = mission_unknown_mission
+
+		trigger = {
+			1028 = {
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			1519 = {
+				is_strongest_trade_power = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_TE_Ynn_Norn_Route.built_Souther_Road.tooltip
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = KAS_Ynnic_Trade_Route
+				duration = -1
+			}
+		}
+	}
+}
+
+KAS_Trade_Empire_MiddleLeft = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		has_country_flag = KAS_Kobld_Merchant_Empire
+	}
+
+	KAS_TE_Elliande_Ports = {
+		required_missions = {
+			KAS_discover_new_hoard 
+		}
+		position = 7
+		icon = mission_unknown_mission
+
+		trigger = {
+			1006 = {
+				country_or_non_sovereign_subject_holds = ROOT
+				OR = {
+					has_building = shipyard
+					development = 20
+				}
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 5
+				colonial_region = colonial_endralliande
+				is_city = yes
+			}
+		}
+
+		effect = {
+			custom_tooltip = KAS_TE_Elliande_Ports.completion.tooltip
+			custom_tooltip = KAS_TE_Elliande_Ports.conditional_modifier
+			add_country_modifier = {
+				name = KAS_TE_Colonial_Fleet
+				duration = -1
+			}
+		}
+	}
+
+	KAS_TE_Map_Noruin = {
+		required_missions = {
+			KAS_TE_Elliande_Ports 
+		}
+		position = 8
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_New_city = {
+		required_missions = {
+			KAS_TE_Map_Noruin
+			KAS_TE_Isles_Outposts
+		}
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_New_Agriculture = {
+		required_missions = {
+			KAS_TE_New_city
+		}
+		position = 10
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_New_World_Production = {
+		required_missions = {
+			KAS_TE_New_Agriculture
+			KAS_TE_Northern_Dominion
+		}
+		position = 11
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Aelentir_Hegemon = {
+		required_missions = {
+			KAS_TE_New_World_Production
+			KAS_TE_Push_West
+		}
+		position = 12
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Colonial_Empire = {
+		required_missions = {
+			KAS_TE_Aelentir_Hegemon
+			KAS_TE_Ynn_Norn_Route
+		}
+		position = 14
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+}
+
+KAS_Trade_Empire_Middle = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		has_country_flag = KAS_Kobld_Merchant_Empire
+	}
+
+	KAS_Delicate_Balance = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Kobold_kingdom_formation
+		}
+		position = 5
+		trigger = {
+			NOT = {
+				has_any_disaster = yes
+			}
+			NOT = {
+				is_at_war = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Redscales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Redscales
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Greenscales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Greenscales
+			}
+			custom_trigger_tooltip = {
+				tooltip = KAS_Delicate_Balance.Bluescales.Tooltip
+				has_country_flag = KAS_Decision_Pacified_Bluescales
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_Delicate_Balance.completion.tooltip
+			country_event = {
+				id =  kas_mission_event.12
+			}
+		}
+	}
+
+	KAS_Kobold_Identity = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Delicate_Balance
+		}
+		position = 6
+		trigger = {
+			has_institution = renaissance
+			NOT = {
+				has_country_modifier = monstrous_nation
+			}
+		}
+		effect = {
+			country_event = {
+				id =  kas_mission_event.13
+			}
+		}
+	}
+
+	KAS_TE_Mercantile_Economy = {
+		required_missions = {
+			KAS_Kobold_Identity
+		}
+		position = 7
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Isles_Outposts = {
+		required_missions = {
+			KAS_TE_Elliande_Ports
+		}
+		position = 8
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Trade_Monopolies = {
+		required_missions = {
+			KAS_TE_Isles_Outposts 
+		}
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Trade_Bounty = {
+		required_missions = {
+			KAS_TE_Trade_Monopolies
+			KAS_TE_New_Agriculture
+		}
+		position = 11
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Sowing = {
+		required_missions = {
+			KAS_TE_Trade_Bounty
+		}
+		position = 12
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Reaping = {
+		required_missions = {
+			KAS_TE_Sowing
+		}
+		position = 14
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Unmatched_Wealth = {
+		required_missions = {
+			KAS_TE_Reaping
+			KAS_TE_Colonial_Empire
+			KAS_TE_Raheni_Trade
+		}
+		position = 15
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+}
+
+KAS_Trade_Empire_MiddleRight = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		has_country_flag = KAS_Kobld_Merchant_Empire
+	}
+
+	KAS_Military_Reforms = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {KAS_mission_levy_clans}
+		position = 2
+		trigger = {
+			mil_tech = 7
+			mil_power = 200
+			army_professionalism = 0.20
+			OR = {
+				commandant = 3
+				army_reformer = 3
+			}
+		}
+		effect = {
+			add_mil_power = -200
+			country_event = {
+				id = kas_mission_event.11
+			}
+		}
+	}
+
+	KAS_Eastern_Frontier = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_mission_defy_tallfolk
+		}
+		position = 3
+		provinces_to_highlight = {
+			area = westmoor_proper_area
+			area = moorhills_area
+			area = beronmoor_area
+		}
+		trigger = {
+			westmoor_proper_area = {
+				type = all
+				owned_by = ROOT
+			}
+			moorhills_area = {
+				type = all
+				owned_by = ROOT
+			}
+			beronmoor_area = {
+				type = all
+				owned_by = ROOT
+			}
+			NOT = {
+				exists = A24
+			}
+		}
+		effect = {
+			westmoor_proper_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+			moorhills_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+			beronmoor_area = {
+				add_kobold_minority_size_effect = yes
+				add_unrest = 10
+			}
+		}
+	}
+
+	KAS_Conquer_Westmoors = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Eastern_Frontier
+		}
+		position = 4
+		trigger = {
+			war_score_against = {
+				who = A13
+				value = 50
+			}
+			controls = 221
+		}
+		effect = {
+			custom_tooltip = KAS_Conquer_Westmoors.tooltip.completion
+			hidden_effect = {
+				alenic_frontier_region = {
+					is_core = A13
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	KAS_Skewer_Gawed = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Destroy_Eaglecrest
+			KAS_Conquer_Westmoors
+		}
+		position = 5
+		trigger = {
+			NOT = {
+				exists = A13
+			}
+			calc_true_if = {
+				any_owned_province = {
+					region = alenic_frontier_region
+				}
+				amount = 20
+			}
+			NOT = {
+				any_owned_province = {
+					region = alenic_frontier_region
+					local_autonomy = 25
+					unrest = 0
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = KAS_Dummy_Kobildzan_Mission_Icon.completion.tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_core =  A13
+					}
+					remove_core =  A13
+				}
+			}
+			west_chillsbay_area = {
+				add_permanent_claim = ROOT
+			}
+			dinesck_area = {
+				add_permanent_claim = ROOT
+			}
+			northern_greatwoods_area = {
+				add_permanent_claim = ROOT
+			}
+			serpentshead_area = {
+				add_permanent_claim = ROOT
+			}
+			mawriver_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	KAS_Control_Plateau = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Skewer_Gawed
+		}
+		position = 6
+		provinces_to_highlight = {
+			area = west_chillsbay_area
+			area = dinesck_area
+			area = northern_greatwoods_area 
+			area = serpentshead_area
+			area = mawriver_area
+		}
+		trigger = {
+			west_chillsbay_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			dinesck_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			northern_greatwoods_area  = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			serpentshead_area= {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+			mawriver_area = {
+				type = all	
+				OR = {
+					AND = {
+						controlled_by = ROOT
+						owned_by = ROOT
+					}
+					owner = {
+						alliance_with = ROOT
+					}
+					owner = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = KAS_Mastery_Alen
+				duration = 7300
+			}
+			221 = {
+				change_culture = ROOT
+				add_base_tax = 2
+				add_base_manpower = 4
+				add_province_modifier = {
+					name = KAS_Alenic_Capital
+					duration = -1
+				}
+			}
+		}
+	}
+
+	KAS_TE_Riviera_Rumble = {
+		required_missions = {
+			KAS_Kobold_Identity
+		}
+		position = 7
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Lorentish_Blood = {
+		required_missions = {
+			KAS_TE_Mercantile_Economy
+			KAS_TE_Riviera_Rumble
+		}
+		position = 8
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Lorentish_Wine = {
+		required_missions = {
+			KAS_TE_Lorentish_Blood
+		}
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Trade_Businor = {
+		required_missions = {
+			KAS_TE_Lorentish_Blood
+			KAS_TE_Trade_League
+		}
+		position = 10
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Divenhal_Trade = {
+		required_missions = {
+			KAS_TE_Trade_Businor
+		}
+		position = 12
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Bulwari_Business = {
+		required_missions = {
+			KAS_TE_Divenhal_Trade
+		}
+		position = 13
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Raheni_Trade = {
+		required_missions = {
+			KAS_TE_Bulwari_Business
+		}
+		position = 14
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+}
+
+KAS_Trade_Empire_Right = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+
+	potential = {
+		OR = {
+			AND = {
+				culture_group = kobold
+				capital_scope = { superregion = western_cannor_superregion }
+			}
+			tag = Z38
+		}
+		has_country_flag = KAS_Kobld_Merchant_Empire
+	}
+
+	KAS_Southern_Frontier = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_mission_defy_tallfolk
+		}
+		position = 3
+		provinces_to_highlight = {
+			area = gnomish_pass_area
+			area = reaver_coast_area
+			area = iochand_area
+		}
+		trigger = {
+			NOT = {
+				is_at_war = yes
+			}
+			calc_true_if = {
+				any_owned_province = {
+					is_core = ROOT
+					OR = {
+						area = gnomish_pass_area
+						area = reaver_coast_area
+						area = iochand_area
+					}
+				}
+				amount = 10
+			}
+			any_owned_province = {
+				OR = {
+					area = gnomish_pass_area
+					area = reaver_coast_area
+					area = iochand_area
+				}
+				fort_level = 2
+			}
+		}
+		effect = {
+			dragonhills_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	KAS_Destroy_Eaglecrest = {
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+		required_missions = {
+			KAS_Southern_Frontier
+		}
+		position = 4
+		trigger = {
+			owns_all_provinces = {
+				area = dragonhills_area
+			}
+			controls = 213
+		}
+		effect = {
+			country_event = {
+				id = kas_mission_event.10
+			}
+		}
+	}
+
+	KAS_Kobold_Crafts = {
+		required_missions = {}
+		position = 5
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+
+		trigger = {
+			OR = {
+				calc_true_if = {
+					OR = {
+						any_owned_province = {
+							trade_goods = iron
+							base_production = 10
+						}
+						any_owned_province = {
+							trade_goods = copper
+							base_production = 10
+						}
+					}
+					amount = 8
+				}
+				OR = {
+					trading_bonus = {
+						trade_goods = iron
+						value = yes
+					}
+					trading_bonus = {
+						trade_goods = copper
+						value = yes
+					}
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = kas_mission_event.9
+			}
+		}
+	}
+
+	KAS_kobold_hoard_proper = {
+		required_missions = {
+			KAS_Kobold_Crafts
+		}
+		position = 6
+		icon = KAS_Dummy_Kobildzan_Mission_Icon
+
+		provinces_to_highlight = {
+			province_id = 189
+		}
+
+		trigger = {
+			AND = {
+				is_core = 189
+				controls = 189
+			}
+			monthly_income = 100
+			treasury = 5000
+			OR = {
+				in_golden_age = yes
+				NOT = {
+					great_power_rank = 5
+				}
+			}
+		}
+
+		effect = {
+			add_treasury = -5000
+			189 = {
+				add_province_modifier = {
+					name = KAS_Proper_Income_Reward
+					duration = -1
+				}
+				change_trade_goods = gold
+				add_base_tax = 2
+				add_base_production = 4
+				add_base_manpower = 2
+			}
+			add_country_modifier = {
+				name = KAS_Proper_Income_Reward_prosperity
+				duration = 10950
+			}
+		}
+	}
+
+	KAS_TE_Trade_Reforms = {
+		required_missions = {
+			
+		}
+		position = 7
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Trade_League = {
+		required_missions = {
+			KAS_TE_Trade_Reforms
+		}
+		position = 9
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Coastal_Prosperity = {
+		required_missions = {
+			KAS_TE_Trade_League
+		}
+		position = 10
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Gem_Markets = {
+		required_missions = {
+			KAS_TE_Coastal_Prosperity
+		}
+		position = 11
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Kobold_Craftsmanship = {
+		required_missions = {
+			KAS_TE_Gem_Markets
+		}
+		position = 12
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Nathaire_Deal = {
+		required_missions = {
+			KAS_TE_Divenhal_Trade
+		}
+		position = 13
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Halessi_Trade = {
+		required_missions = {
+			KAS_TE_Bulwari_Business
+		}
+		position = 14
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+
+	KAS_TE_Silk_Porcelaine = {
+		required_missions = {
+			KAS_TE_Halessi_Trade
+		}
+		position = 15
+		icon = mission_unknown_mission
+
+		trigger = {
+			always = no
+		}
+
+		effect = {
+			
+		}
+	}
+}

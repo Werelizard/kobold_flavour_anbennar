@@ -10,3 +10,9 @@ KAS_restored_bonds = {
 	max = 50
 	months = 1200
 }
+
+KAS_Petitioning_Treaty = {
+	opinion = 150
+	max = 125
+	yearly_decay = -0.5
+}

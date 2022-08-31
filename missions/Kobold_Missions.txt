@@ -1036,49 +1036,72 @@ KAS_Kob_Right = {
 		}
 	}
 
-	KAS_mission_show_strength = {
+	KAS_mission_shadow_looms = {
 		required_missions = {}
 		position = 1
 		icon = KAS_Dummy_Mission_Icon
 
 		trigger = {
-			any_neighbor_country = {
+			hidden_trigger = {
+				NOT = {
+					ai = yes
+				}
+			}
+			OR = {
 				AND = {
-					NOT = {
-						culture_group = kobold
+					dip_power = 200
+					OR = {
+						advisor = statesman
+						advisor = diplomat
+						advisor = spymaster
 					}
-					NOT = {
-						culture_group = gnomish
+					OR = {
+						advisor = court_mage
+						adm_power = 100
 					}
 				}
-				OR = {
-					custom_trigger_tooltip = {
-						tooltip = KAS_mission_show_strength.is_rival.tooltip
-						is_enemy = ROOT
-						OR = {
-							has_opinion_modifier = {
-								who = ROOT
-								modifier = scornfully_insulted
-							}
-						}
+				AND = {
+					has_spy_network_in = {
+						who = A01
+						value = 25
 					}
-					AND = {
-						war_with = ROOT
-						NOT = {
-							war_score_against = {
-								who = ROOT
-								value = -25
-							}
-						}
+					has_spy_network_in = {
+						who = A13
+						value = 25
 					}
 				}
 			}
 		}
 
 		effect = {
-			add_country_modifier = {
-				name = KAS_kobolds_defiant
-				duration = 3650
+			if = {
+				limit = {
+					AND = {
+						has_spy_network_in = {
+							who = A01
+							value = 25
+						}
+						has_spy_network_in = {
+							who = A13
+							value = 25
+						}
+					}
+				}
+				set_country_flag = KAS_kobold_blackmail
+			}
+			else = {
+				if = {
+					limit = {
+						NOT = {
+							advisor = court_mage
+						}
+					}
+					add_adm_power = -200
+				}
+				add_dip_power = -100
+			}
+			country_event = {
+				id = kas_mission_event.14
 			}
 		}
 	}
@@ -1221,7 +1244,6 @@ KAS_Kob_Right = {
 
 	KAS_mission_defy_tallfolk = {
 		required_missions = {
-			KAS_mission_show_strength
 			KAS_mission_levy_clans
 		}
 		position = 2
@@ -1258,6 +1280,10 @@ KAS_Kob_Right = {
 		}
 
 		effect = {
+			add_country_modifier = {
+				name = KAS_kobolds_defiant
+				duration = 3650
+			}
 			custom_tooltip = KAS_mission_defy_tallfolk.completion.tooltip
 			hidden_effect = {
 				if = {

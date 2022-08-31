@@ -19,6 +19,9 @@
  KAS_mission_prepare_raids_desc:0 "We must gather able-bodied men and cunning spies and have them prepare parties with the goal to raid nearby tall-folk - gnomes included. Their gold, their shiny trinkets - all will be ours."
  KAS_mission_prepare_raids.completion.tooltip:0 "The more non-kobold nations we've embedded spies into, the greater the loot we will acquire! For up to four non-kobold nations that we have a spy network of §Y25§! or more in, we will gain additional ¤ §Ycrowns§!. We will however lose some £icon_manpower£ §Ymanpower§! in the process.\n"
 
+ KAS_mission_shadow_looms_title:0 "The Looming Shadow"
+ KAS_mission_shadow_looms_desc:0 "Eone asked me to add this."
+
  KAS_mission_kobold_unification_title:0 "The Kin War"
  KAS_mission_kobold_unification_desc:0 "Only by assuming a dominant position within Kobold-Kind can we expect to begin the long process of unification. Be it by the spear or with words we must persuade the other clans to bend the knee and recognise our dominion over the Kobolds."
  KAS_mission_kobold_unification.tooltip.completion:0 "All other Kobold Clans in Western Cannor will be given a chance at becoming our §Tsubjects§!. Their response will be affected by their §Gopinion§! of us, §Grelative army size§! and §Geconomic strength§!. Shall they refuse, we will be given the option to declare war on them instead; having §Ggood relations§!, §Ghigh trust§! and a §Gdevelopment§! will increase our chances of to have them accept.\n\nHowever, if we do not follow through with their subjugation §Rwe will face a revolt from some of our clansmen!§!\n"

@@ -689,10 +689,10 @@ country_event = {
 	option = {
 		name = kas.mission_event.13.a
 		custom_tooltip = kas.mission_event.13.a.tooltip
-		swap_non_generic_missions = yes
 		hidden_effect = {
 			set_country_flag = KAS_Second_Dragonwake
 		}
+		swap_non_generic_missions = yes
         ai_chance = {
 			factor = 1
 		}
@@ -702,10 +702,10 @@ country_event = {
 	option = {
 		name = kas.mission_event.13.b
 		custom_tooltip = kas.mission_event.13.b.tooltip
-		swap_non_generic_missions = yes
 		hidden_effect = {
 			set_country_flag = KAS_Kobld_Merchant_Empire
 		}
+		swap_non_generic_missions = yes
         ai_chance = {
 			factor = 1
 		}
@@ -715,12 +715,175 @@ country_event = {
 	option = {
 		name = kas.mission_event.13.c
 		custom_tooltip = kas.mission_event.13.c.tooltip
-		swap_non_generic_missions = yes
 		hidden_effect = {
 			set_country_flag = KAS_Kobold_Science
 		}
+		swap_non_generic_missions = yes
         ai_chance = {
 			factor = 1
 		}
+	}
+}
+
+#Kobold Diplomacy event chain
+
+#Petition a power
+country_event = {
+	id = kas_mission_event.14
+	title = kas_mission_event.14.title
+	desc = kas_mission_event.14.desc
+	picture = CAVE_eventPicture
+
+	is_triggered_only = yes
+
+	#Petion Lorent
+	option = {
+		name = kas_mission_event.14.a
+		custom_tooltip = kas_mission_event.14.a
+		add_prestige = -50
+		A01 = {
+			country_event = {
+				id = kas_mission_event.151
+				days = 25
+			}
+		}
+	}
+
+	#Petition Gawed
+	option = {
+		name = kas_mission_event.14.b
+		add_prestige = -50
+		custom_tooltip = kas_mission_event.14.b
+		A13 = {
+			country_event = {
+				id = kas_mission_event.151
+				days = 25
+			}
+		}
+	}
+	
+	#No lmao
+	option = {
+		name = kas_mission_event.14.c
+		add_country_modifier = {
+			name = KAS_independence_affirmed
+			duration = 10950
+		}
+	}
+}
+
+#event for petitioning (Receiver)
+country_event = {
+	id = kas_mission_event.151
+	title = kas_mission_event.151.title
+	desc = kas_mission_event.151.desc
+
+	is_triggered_only = yes
+	
+	#Refuse
+	option = {
+		name = kas_mission_event.151.a
+		FROM = {
+			country_event = {
+				id = kas_mission_event.154
+				days = 25
+			}
+		}
+	}
+
+	#Accept
+	option = {
+		name = kas_mission_event.151.b
+		create_guarantee = FROM
+		small_increase_of_kobold_tolerance_effect = yes
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = KAS_Petitioning_Treaty
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = KAS_Petitioning_Treaty
+		}
+		add_trust = {
+			who = FROM
+			value = 20
+			mutual = yes
+		}
+
+		FROM = {
+			country_event = {
+				id = kas_mission_event.152
+				days = 25
+			}
+		}
+	}
+
+	#Offer to them a tributary agreement
+	option = {
+		name = kas_mission_event.151.c
+		FROM = {
+			country_event = {
+				id = kas_mission_event.153
+				days = 25
+			}
+		}
+	}
+}
+
+#Guarantor accepted
+country_event = {
+	id = kas_mission_event.152
+	title = kas_mission_event.152.title
+	desc = kas_mission_event.152.desc
+
+	option = {
+		name = kas_mission_event.152.a
+	}
+}
+
+#Tributary arrangement
+country_event = {
+	id = kas_mission_event.153
+	title = kas_mission_event.153.title
+	desc = kas_mission_event.153.desc
+
+	#Refuse
+	option = {
+		name = kas_mission_event.153.a
+	}
+
+	#accept
+	option = {
+		name = kas_mission_event.153.b
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+			}
+		}
+		FROM = {
+			create_subject = {
+				subject_type = tributary_state
+				subject = ROOT
+			}
+		}
+		add_trust = {
+			who = FROM
+			value = 20
+			mutual = yes
+		}
+	}
+}
+
+#Total refusal
+country_event = {
+	id = kas_mission_event.154
+	title = kas_mission_event.154.title
+	desc = kas_mission_event.154.desc
+
+	option = {
+		name = kas_mission_event.154.a
 	}
 }

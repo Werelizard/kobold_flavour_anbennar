@@ -1,12 +1,10 @@
 #Events
 
 #Add event for sporadic gnome conversion once they are at least coexisting for the tolerance path
-#Add scientific debate path
 #Add gnomish tension events
 #Add factional flavour events
-#Add kobold artifiecry event for the non tolerance path
-#Add event chain for cracking gnomish code
 #Add random religion events
+#Add capital change effect on Formaton of Kingdom
 
 #Religion 
 

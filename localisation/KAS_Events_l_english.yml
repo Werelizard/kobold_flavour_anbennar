@@ -72,6 +72,14 @@
  kas.mission_event.13.c:0 "Let the Tall-Folk have their glory and their gold, we shall have our science!"
  kas.mission_event.13.c.tooltip:0 "This sets up down the path towards establishing a §TKobold technocracy§!, unlocking the myseries of science and artificery." 
 
+ #Kobold Peitioning event
+
+ kas_mission_event.14.title:0 "The Looming Shadow"
+ kas_mission_event.14.desc:0 ""
+ kas_mission_event.14.a:0 "Petition Gawed"
+ kas_mission_event.14.b:0 "Approach Lorent"
+ kas_mission_event.14.c:0 "We don't need anyone but ourselves!"
+
  #Faction events
 
  kas_factions_event.1.title:0 "The succession of [Root.GetName]"

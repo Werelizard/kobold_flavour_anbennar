@@ -14,3 +14,23 @@ KAS_Alenic_Capital = {
 	local_unrest = -2
 	local_build_cost = -0.25
 }
+
+#TE Modifiers
+
+KAS_TE_Zalayurzin = {
+	trade_value_modifier = 0.33
+	local_development_cost = -0.1
+	allowed_num_of_buildings = 1
+}
+
+KAS_TE_Trade_Outpost_Major = {
+	trade_value_modifier = 0.2
+	trade_value = 2
+	local_development_cost = -0.05
+	allowed_num_of_buildings = 1
+}
+
+KAS_Fortified_Outpost = {
+	allowed_num_of_buildings = 1
+	local_defensiveness = 0.1
+}

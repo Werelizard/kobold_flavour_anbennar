@@ -9,6 +9,9 @@ KAS_KOBILDZAN_Right ={
 	ai = yes
 	potential = {
 		tag = Z38
+		NOT = {
+			has_country_flag = KAS_Kobld_Merchant_Empire
+		}
 	}
 	has_country_shield = yes
 
@@ -165,6 +168,9 @@ KAS_KOBILDZAN_Middle = {
 	ai = yes
 	potential = {
 		tag = Z38
+		NOT = {
+			has_country_flag = KAS_Kobld_Merchant_Empire
+		}
 	}
 	has_country_shield = yes
 
@@ -228,6 +234,9 @@ KAS_KOBILDZAN_MiddleRight = {
 	ai = yes
 	potential = {
 		tag = Z38
+		NOT = {
+			has_country_flag = KAS_Kobld_Merchant_Empire
+		}
 	}
 	has_country_shield = yes
 

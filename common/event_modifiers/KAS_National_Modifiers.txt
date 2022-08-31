@@ -77,7 +77,7 @@ KAS_Cracked_Code = {
 }
 
 KAS_Kobold_artificery = {
-	artificers_loyalty_modifier = 10
+	artificers_loyalty_modifier = 0.1
 }
 
 KAS_adminsitrative_artificers = {
@@ -94,6 +94,31 @@ KAS_indepent_science = {
 	artificers_influence_modifier = 0.1
 	technology_cost = -0.05
 	advisor_cost = 0.2
+}
+
+KAS_independence_affirmed = {
+	war_exhaustion = -0.1
+	prestige = 1
+	improve_relation_modifier = -0.1
+}
+
+#Trade Empire Modifiers
+
+KAS_Frontier_Exploration = {
+	global_colonial_growth = 20
+}
+
+KAS_Ynnic_Trade_Route = {
+	merchants = 1
+	trade_steering = 0.2
+	prestige = 0.5
+}
+
+KAS_TE_Colonial_Fleet = {
+	naval_forcelimit_modifier = 0.05
+	global_sailors = 0.05
+	range = 0.15
+	trade_range_modifier = 0.15
 }
 
 ##Inventions
@@ -134,6 +159,6 @@ KAS_invention_gold_smelting = {
 KAS_invention_experimental = {
 	infantry_fire = 0.1
 	artillery_fire = 0.1
-	yearly_army_professionalism = -0.33
-	reinforce_cost_modifier = 0.25
+	yearly_army_professionalism = -0.5
+	reinforce_cost_modifier = 0.5
 }
