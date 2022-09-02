@@ -15,6 +15,11 @@ KAS_Alenic_Capital = {
 	local_build_cost = -0.25
 }
 
+KAS_Kobold_Traps = {
+	local_hostile_movement_speed = -0.25
+	max_attrition = 1
+}
+
 #TE Modifiers
 
 KAS_TE_Zalayurzin = {

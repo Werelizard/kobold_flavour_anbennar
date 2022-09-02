@@ -26,10 +26,7 @@ KAS_Kob_Left = {
 
 		trigger = {
 			OR = {
-				war_score_against = {
-					who = A06
-					value = 25
-				}
+				war_with = A06
 				NOT = {
 					exists = A06
 				}
@@ -53,6 +50,10 @@ KAS_Kob_Left = {
 					add_permanent_claim = ROOT
 				}
 			}
+			add_country_modifier = {
+				name = KAS_Siege_gnome
+				duration = 3650
+			}
 		}
 	}
 
@@ -60,6 +61,7 @@ KAS_Kob_Left = {
 	KAS_destroy_nimscodd = {
 		required_missions = {
 			KAS_mission_gnomic_scourge
+			KAS_fleet_nimscodd
 		}
 		position = 2
 		icon = KAS_Dummy_Mission_Icon
@@ -266,192 +268,213 @@ KAS_Kob_MiddleLeft = {
 		}
 	}
 
-	#Rival or ally all other Kobold clans
-	KAS_mission_clan_diplomacy = {
+	KAS_fleet_nimscodd = {
 		required_missions = { }
 		position = 1
 		icon = KAS_Dummy_Mission_Icon
 
 		trigger = {
-			if = {
-				limit = {
-					AND = {
-						NOT = {
-							tag = A26
-						}
-						exists = A26
-					}
-				}
-				OR = {
-					AND = {
-						alliance_with = A26
-						reverse_has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					is_rival = A26
-				}
-			}
-
-			if = {
-				limit = {
-					AND = {
-						NOT = {
-							tag = A27
-						}
-						exists = A27
-					}
-				}
-				OR = {
-					AND = {
-						alliance_with = A27
-						reverse_has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					is_rival = A27
-				}
-			}
-
-			if = {
-				limit = {
-					AND = {
-						NOT = {
-							tag = A28
-						}
-						exists = A28
-					}
-				}
-				OR = {
-					AND = {
-						alliance_with = A28
-						reverse_has_opinion = {
-							who = ROOT
-							value = 150
-						}
-					}
-					is_rival = A28
-				}
-			}
-
-			else = {
-				OR = {
-					tag = A26
-					NOT = {
-						exists = A26
-					}
-				}
-				OR = {
-					tag = A27
-					NOT = {
-						exists = A27
-					}
-				}
-				OR = {
-					tag = A28
-					NOT = {
-						exists = A28
-					}
-				}
-			}
+			navy_size_percentage = 1
 		}
-
+		
 		effect = {
-			custom_tooltip = KAS_mission_clan_diplomacy.completion.tooltip
-			hidden_effect = {
-				if = {
-					limit = {
-						is_rival = A26
-					}
-					every_province = {
-						limit = {
-							is_core = A26
-							NOT = {
-								is_core = ROOT
-							}
-						}
-						add_permanent_claim = ROOT
-					}
-				}
-				if = {
-					limit = {
-						is_rival = A27
-					}
-					every_province = {
-						limit = {
-							is_core = A27
-							NOT = {
-								is_core = ROOT
-							}
-						}
-						add_permanent_claim = ROOT
-					}
-				}
-				if = {
-					limit = {
-						is_rival = A28
-					}
-					every_province = {
-						limit = {
-							is_core = A28
-							NOT = {
-								is_core = ROOT
-							}
-						}
-						add_permanent_claim = ROOT
-					}
-				}
-				if = {
-					limit = {
-						alliance_with = A26
-					}
-					add_historical_friend = A26
-					A26 = {
-						add_historical_friend = ROOT
-					}
-				}
-				if = {
-					limit = {
-						alliance_with = A27
-					}
-					add_historical_friend = A27
-					A27 = {
-						add_historical_friend = ROOT
-					}
-				}
-				if = {
-					limit = {
-						alliance_with = A28
-					}
-					add_historical_friend = A28
-					A28 = {
-						add_historical_friend = ROOT
-					}
-				}
-				every_province = {
-					limit = {
-						owner = {
-							NOT = {
-								culture_group = kobold
-							}
-						}
-						NOT = {
-							is_core = ROOT
-						}
-						region = dragon_coast_region
-					}
-					add_permanent_claim = ROOT
-				}
+			add_country_modifier = {
+				name = KAS_Nimscodd_Fleet
+				duration = 3650
 			}
-			
+			126 = {
+				add_permanent_claim = ROOT
+			}
 		}
 	}
+
+	#Rival or ally all other Kobold clans
+	# KAS_mission_clan_diplomacy = {
+	# 	required_missions = { }
+	# 	position = 1
+	# 	icon = KAS_Dummy_Mission_Icon
+
+	# 	trigger = {
+	# 		if = {
+	# 			limit = {
+	# 				AND = {
+	# 					NOT = {
+	# 						tag = A26
+	# 					}
+	# 					exists = A26
+	# 				}
+	# 			}
+	# 			OR = {
+	# 				AND = {
+	# 					alliance_with = A26
+	# 					reverse_has_opinion = {
+	# 						who = ROOT
+	# 						value = 150
+	# 					}
+	# 				}
+	# 				is_rival = A26
+	# 			}
+	# 		}
+
+	# 		if = {
+	# 			limit = {
+	# 				AND = {
+	# 					NOT = {
+	# 						tag = A27
+	# 					}
+	# 					exists = A27
+	# 				}
+	# 			}
+	# 			OR = {
+	# 				AND = {
+	# 					alliance_with = A27
+	# 					reverse_has_opinion = {
+	# 						who = ROOT
+	# 						value = 150
+	# 					}
+	# 				}
+	# 				is_rival = A27
+	# 			}
+	# 		}
+
+	# 		if = {
+	# 			limit = {
+	# 				AND = {
+	# 					NOT = {
+	# 						tag = A28
+	# 					}
+	# 					exists = A28
+	# 				}
+	# 			}
+	# 			OR = {
+	# 				AND = {
+	# 					alliance_with = A28
+	# 					reverse_has_opinion = {
+	# 						who = ROOT
+	# 						value = 150
+	# 					}
+	# 				}
+	# 				is_rival = A28
+	# 			}
+	# 		}
+
+	# 		else = {
+	# 			OR = {
+	# 				tag = A26
+	# 				NOT = {
+	# 					exists = A26
+	# 				}
+	# 			}
+	# 			OR = {
+	# 				tag = A27
+	# 				NOT = {
+	# 					exists = A27
+	# 				}
+	# 			}
+	# 			OR = {
+	# 				tag = A28
+	# 				NOT = {
+	# 					exists = A28
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+
+	# 	effect = {
+	# 		custom_tooltip = KAS_mission_clan_diplomacy.completion.tooltip
+	# 		hidden_effect = {
+	# 			if = {
+	# 				limit = {
+	# 					is_rival = A26
+	# 				}
+	# 				every_province = {
+	# 					limit = {
+	# 						is_core = A26
+	# 						NOT = {
+	# 							is_core = ROOT
+	# 						}
+	# 					}
+	# 					add_permanent_claim = ROOT
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					is_rival = A27
+	# 				}
+	# 				every_province = {
+	# 					limit = {
+	# 						is_core = A27
+	# 						NOT = {
+	# 							is_core = ROOT
+	# 						}
+	# 					}
+	# 					add_permanent_claim = ROOT
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					is_rival = A28
+	# 				}
+	# 				every_province = {
+	# 					limit = {
+	# 						is_core = A28
+	# 						NOT = {
+	# 							is_core = ROOT
+	# 						}
+	# 					}
+	# 					add_permanent_claim = ROOT
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					alliance_with = A26
+	# 				}
+	# 				add_historical_friend = A26
+	# 				A26 = {
+	# 					add_historical_friend = ROOT
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					alliance_with = A27
+	# 				}
+	# 				add_historical_friend = A27
+	# 				A27 = {
+	# 					add_historical_friend = ROOT
+	# 				}
+	# 			}
+	# 			if = {
+	# 				limit = {
+	# 					alliance_with = A28
+	# 				}
+	# 				add_historical_friend = A28
+	# 				A28 = {
+	# 					add_historical_friend = ROOT
+	# 				}
+	# 			}
+	# 			every_province = {
+	# 				limit = {
+	# 					owner = {
+	# 						NOT = {
+	# 							culture_group = kobold
+	# 						}
+	# 					}
+	# 					NOT = {
+	# 						is_core = ROOT
+	# 					}
+	# 					region = dragon_coast_region
+	# 				}
+	# 				add_permanent_claim = ROOT
+	# 			}
+	# 		}
+			
+	# 	}
+	# }
 
 	KAS_obliterate_portnamm = {
 		required_missions = {
 			KAS_mission_gnomic_scourge
+			KAS_fleet_nimscodd
 		}
 		position = 2
 		icon = KAS_Dummy_Mission_Icon
@@ -585,58 +608,232 @@ KAS_Kob_Middle = {
 		}
 	}
 
-	KAS_mission_religious_patronage = {
+	# KAS_mission_religious_patronage = {
+	# 	required_missions = { }
+	# 	position = 1
+	# 	icon = KAS_Dummy_Mission_Icon
+
+	# 	trigger = {
+	# 		AND = {
+	# 			OR = {
+	# 				stability = 1
+	# 				treasury = 200
+	# 			}
+	# 			legitimacy_equivalent = 90
+	# 		}
+	# 	}
+	# 	effect = {
+	# 		custom_tooltip = KAS_mission_religious_patronage.completion.tooltip
+	# 		if = {
+	# 			limit = {
+	# 				treasury = 200
+	# 				NOT = {
+	# 					stability = 1
+	# 				}
+	# 			}
+	# 			add_treasury = -200
+	# 			add_country_modifier = {
+	# 				name = KAS_mission_religious_patronage_reward
+	# 				duration = 1825
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				stability = 1
+	# 				NOT = {
+	# 					treasury = 200
+	# 				}
+	# 			}
+	# 			add_country_modifier = {
+	# 				name = KAS_mission_religious_patronage_reward_greater
+	# 				duration = 1825
+	# 			}
+	# 		}
+	# 		if = {
+	# 			limit = {
+	# 				treasury = 200
+	# 				stability = 1
+	# 			}
+	# 			add_treasury = -200
+	# 			add_country_modifier = {
+	# 				name = KAS_mission_religious_patronage_reward_greatest
+	# 				duration = 1825
+	# 			}
+	# 		}
+	# 	}
+	# }
+	
+	#Rival or ally all other Kobold clans
+	KAS_mission_clan_diplomacy = {
 		required_missions = { }
 		position = 1
 		icon = KAS_Dummy_Mission_Icon
 
 		trigger = {
-			AND = {
-				OR = {
-					stability = 1
-					treasury = 200
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A26
+						}
+						exists = A26
+					}
 				}
-				legitimacy_equivalent = 90
+				OR = {
+					AND = {
+						alliance_with = A26
+					}
+					is_rival = A26
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A27
+						}
+						exists = A27
+					}
+				}
+				OR = {
+					AND = {
+						alliance_with = A27
+					}
+					is_rival = A27
+				}
+			}
+
+			if = {
+				limit = {
+					AND = {
+						NOT = {
+							tag = A28
+						}
+						exists = A28
+					}
+				}
+				OR = {
+					AND = {
+						alliance_with = A28
+					}
+					is_rival = A28
+				}
+			}
+
+			else = {
+				OR = {
+					tag = A26
+					NOT = {
+						exists = A26
+					}
+				}
+				OR = {
+					tag = A27
+					NOT = {
+						exists = A27
+					}
+				}
+				OR = {
+					tag = A28
+					NOT = {
+						exists = A28
+					}
+				}
 			}
 		}
+
 		effect = {
-			custom_tooltip = KAS_mission_religious_patronage.completion.tooltip
-			if = {
-				limit = {
-					treasury = 200
-					NOT = {
-						stability = 1
+			create_general = {
+				tradition = 60
+			}
+			custom_tooltip = KAS_mission_clan_diplomacy.completion.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						is_rival = A26
+					}
+					every_province = {
+						limit = {
+							is_core = A26
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
 					}
 				}
-				add_treasury = -200
-				add_country_modifier = {
-					name = KAS_mission_religious_patronage_reward
-					duration = 1825
-				}
-			}
-			if = {
-				limit = {
-					stability = 1
-					NOT = {
-						treasury = 200
+				if = {
+					limit = {
+						is_rival = A27
+					}
+					every_province = {
+						limit = {
+							is_core = A27
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
 					}
 				}
-				add_country_modifier = {
-					name = KAS_mission_religious_patronage_reward_greater
-					duration = 1825
+				if = {
+					limit = {
+						is_rival = A28
+					}
+					every_province = {
+						limit = {
+							is_core = A28
+							NOT = {
+								is_core = ROOT
+							}
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A26
+					}
+					add_historical_friend = A26
+					A26 = {
+						add_historical_friend = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A27
+					}
+					add_historical_friend = A27
+					A27 = {
+						add_historical_friend = ROOT
+					}
+				}
+				if = {
+					limit = {
+						alliance_with = A28
+					}
+					add_historical_friend = A28
+					A28 = {
+						add_historical_friend = ROOT
+					}
+				}
+				every_province = {
+					limit = {
+						owner = {
+							NOT = {
+								culture_group = kobold
+							}
+						}
+						NOT = {
+							is_core = ROOT
+						}
+						region = dragon_coast_region
+					}
+					add_permanent_claim = ROOT
 				}
 			}
-			if = {
-				limit = {
-					treasury = 200
-					stability = 1
-				}
-				add_treasury = -200
-				add_country_modifier = {
-					name = KAS_mission_religious_patronage_reward_greatest
-					duration = 1825
-				}
-			}
+			
 		}
 	}
 	
@@ -645,7 +842,6 @@ KAS_Kob_Middle = {
 		required_missions = {
 			KAS_mission_levy_clans
 			KAS_mission_clan_diplomacy
-			KAS_mission_religious_patronage
 		}
 
 		position = 2
@@ -1011,11 +1207,13 @@ KAS_Kob_MiddleRight = {
 				limit = {
 					KAS_largest_kobold_army_in_Dragoncoast = yes
 					}
-					create_general = { tradition = 100 } 
+					add_prestige = 10 
 				}
-			else = {
-				create_general = { tradition = 80 }
+			add_country_modifier = {
+				name = KAS_Clansmen_Assembled
+				duration = 7300
 			}
+			add_yearly_manpower = 2
 		}
 	}
 }
@@ -1036,75 +1234,66 @@ KAS_Kob_Right = {
 		}
 	}
 
-	KAS_mission_shadow_looms = {
-		required_missions = {}
-		position = 1
-		icon = KAS_Dummy_Mission_Icon
+	# KAS_mission_shadow_looms = {
+	# 	required_missions = {}
+	# 	position = 1
+	# 	icon = KAS_Dummy_Mission_Icon
 
-		trigger = {
-			hidden_trigger = {
-				NOT = {
-					ai = yes
-				}
-			}
-			OR = {
-				AND = {
-					dip_power = 200
-					OR = {
-						advisor = statesman
-						advisor = diplomat
-						advisor = spymaster
-					}
-					OR = {
-						advisor = court_mage
-						adm_power = 100
-					}
-				}
-				AND = {
-					has_spy_network_in = {
-						who = A01
-						value = 25
-					}
-					has_spy_network_in = {
-						who = A13
-						value = 25
-					}
-				}
-			}
-		}
+	# 	trigger = {
+	# 		hidden_trigger = {
+	# 			NOT = {
+	# 				ai = yes
+	# 			}
+	# 		}
+	# 		NOT = {
+	# 			is_at_war = yes
+	# 		}
+	# 		OR = {
 
-		effect = {
-			if = {
-				limit = {
-					AND = {
-						has_spy_network_in = {
-							who = A01
-							value = 25
-						}
-						has_spy_network_in = {
-							who = A13
-							value = 25
-						}
-					}
-				}
-				set_country_flag = KAS_kobold_blackmail
-			}
-			else = {
-				if = {
-					limit = {
-						NOT = {
-							advisor = court_mage
-						}
-					}
-					add_adm_power = -200
-				}
-				add_dip_power = -100
-			}
-			country_event = {
-				id = kas_mission_event.14
-			}
-		}
-	}
+	# 			AND = {
+	# 				dip_power = 200
+	# 				OR = {
+	# 					advisor = statesman
+	# 					advisor = diplomat
+	# 				}
+	# 			}
+	# 			AND = {
+	# 				has_spy_network_in = {
+	# 					who = A01
+	# 					value = 25
+	# 				}
+	# 				has_spy_network_in = {
+	# 					who = A13
+	# 					value = 25
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+
+	# 	effect = {
+	# 		if = {
+	# 			limit = {
+	# 				AND = {
+	# 					has_spy_network_in = {
+	# 						who = A01
+	# 						value = 25
+	# 					}
+	# 					has_spy_network_in = {
+	# 						who = A13
+	# 						value = 25
+	# 					}
+	# 				}
+	# 			}
+	# 			set_country_flag = KAS_kobold_blackmail
+	# 		}
+	# 		else = {
+	# 			add_dip_power = -200
+	# 		}
+	# 		country_event = {
+	# 			id = kas_mission_event.14
+	# 		}
+	# 	}
+	# }
 
 	# KAS_mission_prepare_raids = {
 	# 	required_missions = { }

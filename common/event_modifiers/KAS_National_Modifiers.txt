@@ -102,6 +102,21 @@ KAS_independence_affirmed = {
 	improve_relation_modifier = -0.1
 }
 
+KAS_Siege_gnome = {
+	siege_ability = 0.2
+	available_province_loot = 0.5
+}
+
+KAS_Nimscodd_Fleet = {
+	naval_morale = 0.1
+	own_coast_naval_combat_bonus = 1
+}
+
+KAS_Clansmen_Assembled = {
+	manpower_recovery_speed = 0.15
+}
+
+
 #Trade Empire Modifiers
 
 KAS_Frontier_Exploration = {

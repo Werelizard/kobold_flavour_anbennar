@@ -756,6 +756,7 @@ tribal = {
 				infernal_autocracy
 				roadwarrior_great_convoy
 				harpy_matriarchy_reform
+				KAS_Kobold_Pack_reform
 			}
 		}
 		tribal_cultural_values = {

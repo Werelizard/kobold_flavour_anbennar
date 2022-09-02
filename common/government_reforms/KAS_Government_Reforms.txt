@@ -1,5 +1,5 @@
 ############
-#MONARCHIES#
+#Republics #
 ############
 
 #Kobildzan
@@ -36,5 +36,64 @@ KAS_Kobildzan_reform = {
 
 	ai = {
 		factor = 1
+	}
+}
+
+############
+#TRIBES    #
+############
+
+KAS_Kobold_Pack_reform = {
+	icon = "organising_our_religion_reform"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	allow_normal_conversion = no
+	
+
+	potential = {
+		culture_group = kobold
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.2
+		land_forcelimit_modifier = 0.2
+		land_maintenance_modifier = -0.25
+		war_exhaustion = -0.025
+		global_institution_spread = -0.5
+		diplomatic_upkeep = -2
+		reform_progress_growth = -0.5
+	}
+
+	start_territory_to_estates = 0.5
+
+	lock_level_when_selected = yes
+	can_change_primary_culture = no
+	maintain_dynasty = yes
+	allow_migration = no
+
+	effect = {
+		custom_tooltip = KAS_Kobold_Pack.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				if = {
+					limit = { 
+						culture_group = kobold
+					 }
+					add_province_modifier = { 
+						name = KAS_Kobold_Traps
+						duration = -1
+						hidden = yes
+					}
+				}
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = KAS_Kobold_Traps }
+				remove_province_modifier = KAS_Kobold_Traps
+			}
+		}
 	}
 }
